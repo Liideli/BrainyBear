@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F41D653F29D4398800FE6CA6 /* BrainyBearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D653E29D4398800FE6CA6 /* BrainyBearApp.swift */; };
+		F41D654129D4398800FE6CA6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D654029D4398800FE6CA6 /* ContentView.swift */; };
+		F41D654329D4398900FE6CA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41D654229D4398900FE6CA6 /* Assets.xcassets */; };
+		F41D654629D4398900FE6CA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41D654529D4398900FE6CA6 /* Preview Assets.xcassets */; };
+		F41D655029D4398900FE6CA6 /* BrainyBearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D654F29D4398900FE6CA6 /* BrainyBearTests.swift */; };
+		F41D655A29D4398900FE6CA6 /* BrainyBearUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D655929D4398900FE6CA6 /* BrainyBearUITests.swift */; };
+		F41D655C29D4398900FE6CA6 /* BrainyBearUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D655B29D4398900FE6CA6 /* BrainyBearUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F41D654C29D4398900FE6CA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F41D653329D4398800FE6CA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F41D653A29D4398800FE6CA6;
+			remoteInfo = BrainyBear;
+		};
+		F41D655629D4398900FE6CA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F41D653329D4398800FE6CA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F41D653A29D4398800FE6CA6;
+			remoteInfo = BrainyBear;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F41D653B29D4398800FE6CA6 /* BrainyBear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainyBear.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F41D653E29D4398800FE6CA6 /* BrainyBearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainyBearApp.swift; sourceTree = "<group>"; };
+		F41D654029D4398800FE6CA6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F41D654229D4398900FE6CA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F41D654529D4398900FE6CA6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F41D654B29D4398900FE6CA6 /* BrainyBearTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainyBearTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F41D654F29D4398900FE6CA6 /* BrainyBearTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainyBearTests.swift; sourceTree = "<group>"; };
+		F41D655529D4398900FE6CA6 /* BrainyBearUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainyBearUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F41D655929D4398900FE6CA6 /* BrainyBearUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainyBearUITests.swift; sourceTree = "<group>"; };
+		F41D655B29D4398900FE6CA6 /* BrainyBearUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainyBearUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F41D653829D4398800FE6CA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F41D654829D4398900FE6CA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F41D655229D4398900FE6CA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F41D653229D4398800FE6CA6 = {
+			isa = PBXGroup;
+			children = (
+				F41D653D29D4398800FE6CA6 /* BrainyBear */,
+				F41D654E29D4398900FE6CA6 /* BrainyBearTests */,
+				F41D655829D4398900FE6CA6 /* BrainyBearUITests */,
+				F41D653C29D4398800FE6CA6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F41D653C29D4398800FE6CA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F41D653B29D4398800FE6CA6 /* BrainyBear.app */,
+				F41D654B29D4398900FE6CA6 /* BrainyBearTests.xctest */,
+				F41D655529D4398900FE6CA6 /* BrainyBearUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F41D653D29D4398800FE6CA6 /* BrainyBear */ = {
+			isa = PBXGroup;
+			children = (
+				F41D653E29D4398800FE6CA6 /* BrainyBearApp.swift */,
+				F41D654029D4398800FE6CA6 /* ContentView.swift */,
+				F41D654229D4398900FE6CA6 /* Assets.xcassets */,
+				F41D654429D4398900FE6CA6 /* Preview Content */,
+			);
+			path = BrainyBear;
+			sourceTree = "<group>";
+		};
+		F41D654429D4398900FE6CA6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F41D654529D4398900FE6CA6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F41D654E29D4398900FE6CA6 /* BrainyBearTests */ = {
+			isa = PBXGroup;
+			children = (
+				F41D654F29D4398900FE6CA6 /* BrainyBearTests.swift */,
+			);
+			path = BrainyBearTests;
+			sourceTree = "<group>";
+		};
+		F41D655829D4398900FE6CA6 /* BrainyBearUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F41D655929D4398900FE6CA6 /* BrainyBearUITests.swift */,
+				F41D655B29D4398900FE6CA6 /* BrainyBearUITestsLaunchTests.swift */,
+			);
+			path = BrainyBearUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F41D653A29D4398800FE6CA6 /* BrainyBear */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F41D655F29D4398900FE6CA6 /* Build configuration list for PBXNativeTarget "BrainyBear" */;
+			buildPhases = (
+				F41D653729D4398800FE6CA6 /* Sources */,
+				F41D653829D4398800FE6CA6 /* Frameworks */,
+				F41D653929D4398800FE6CA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrainyBear;
+			productName = BrainyBear;
+			productReference = F41D653B29D4398800FE6CA6 /* BrainyBear.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F41D654A29D4398900FE6CA6 /* BrainyBearTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F41D656229D4398900FE6CA6 /* Build configuration list for PBXNativeTarget "BrainyBearTests" */;
+			buildPhases = (
+				F41D654729D4398900FE6CA6 /* Sources */,
+				F41D654829D4398900FE6CA6 /* Frameworks */,
+				F41D654929D4398900FE6CA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F41D654D29D4398900FE6CA6 /* PBXTargetDependency */,
+			);
+			name = BrainyBearTests;
+			productName = BrainyBearTests;
+			productReference = F41D654B29D4398900FE6CA6 /* BrainyBearTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F41D655429D4398900FE6CA6 /* BrainyBearUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F41D656529D4398900FE6CA6 /* Build configuration list for PBXNativeTarget "BrainyBearUITests" */;
+			buildPhases = (
+				F41D655129D4398900FE6CA6 /* Sources */,
+				F41D655229D4398900FE6CA6 /* Frameworks */,
+				F41D655329D4398900FE6CA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F41D655729D4398900FE6CA6 /* PBXTargetDependency */,
+			);
+			name = BrainyBearUITests;
+			productName = BrainyBearUITests;
+			productReference = F41D655529D4398900FE6CA6 /* BrainyBearUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F41D653329D4398800FE6CA6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					F41D653A29D4398800FE6CA6 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					F41D654A29D4398900FE6CA6 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = F41D653A29D4398800FE6CA6;
+					};
+					F41D655429D4398900FE6CA6 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = F41D653A29D4398800FE6CA6;
+					};
+				};
+			};
+			buildConfigurationList = F41D653629D4398800FE6CA6 /* Build configuration list for PBXProject "BrainyBear" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F41D653229D4398800FE6CA6;
+			productRefGroup = F41D653C29D4398800FE6CA6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F41D653A29D4398800FE6CA6 /* BrainyBear */,
+				F41D654A29D4398900FE6CA6 /* BrainyBearTests */,
+				F41D655429D4398900FE6CA6 /* BrainyBearUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F41D653929D4398800FE6CA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F41D654629D4398900FE6CA6 /* Preview Assets.xcassets in Resources */,
+				F41D654329D4398900FE6CA6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F41D654929D4398900FE6CA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F41D655329D4398900FE6CA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F41D653729D4398800FE6CA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F41D654129D4398800FE6CA6 /* ContentView.swift in Sources */,
+				F41D653F29D4398800FE6CA6 /* BrainyBearApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F41D654729D4398900FE6CA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F41D655029D4398900FE6CA6 /* BrainyBearTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F41D655129D4398900FE6CA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F41D655A29D4398900FE6CA6 /* BrainyBearUITests.swift in Sources */,
+				F41D655C29D4398900FE6CA6 /* BrainyBearUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F41D654D29D4398900FE6CA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F41D653A29D4398800FE6CA6 /* BrainyBear */;
+			targetProxy = F41D654C29D4398900FE6CA6 /* PBXContainerItemProxy */;
+		};
+		F41D655729D4398900FE6CA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F41D653A29D4398800FE6CA6 /* BrainyBear */;
+			targetProxy = F41D655629D4398900FE6CA6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F41D655D29D4398900FE6CA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F41D655E29D4398900FE6CA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F41D656029D4398900FE6CA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BrainyBear/Preview Content\"";
+				DEVELOPMENT_TEAM = 6649TRY2DD;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roopelaine.BrainyBear;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F41D656129D4398900FE6CA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BrainyBear/Preview Content\"";
+				DEVELOPMENT_TEAM = 6649TRY2DD;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roopelaine.BrainyBear;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F41D656329D4398900FE6CA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6649TRY2DD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roopelaine.BrainyBearTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrainyBear.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BrainyBear";
+			};
+			name = Debug;
+		};
+		F41D656429D4398900FE6CA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6649TRY2DD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roopelaine.BrainyBearTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrainyBear.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BrainyBear";
+			};
+			name = Release;
+		};
+		F41D656629D4398900FE6CA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6649TRY2DD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roopelaine.BrainyBearUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BrainyBear;
+			};
+			name = Debug;
+		};
+		F41D656729D4398900FE6CA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6649TRY2DD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roopelaine.BrainyBearUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BrainyBear;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F41D653629D4398800FE6CA6 /* Build configuration list for PBXProject "BrainyBear" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F41D655D29D4398900FE6CA6 /* Debug */,
+				F41D655E29D4398900FE6CA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F41D655F29D4398900FE6CA6 /* Build configuration list for PBXNativeTarget "BrainyBear" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F41D656029D4398900FE6CA6 /* Debug */,
+				F41D656129D4398900FE6CA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F41D656229D4398900FE6CA6 /* Build configuration list for PBXNativeTarget "BrainyBearTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F41D656329D4398900FE6CA6 /* Debug */,
+				F41D656429D4398900FE6CA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F41D656529D4398900FE6CA6 /* Build configuration list for PBXNativeTarget "BrainyBearUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F41D656629D4398900FE6CA6 /* Debug */,
+				F41D656729D4398900FE6CA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F41D653329D4398800FE6CA6 /* Project object */;
+}
