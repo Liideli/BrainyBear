@@ -39,7 +39,8 @@ struct MathGameView: View {
     var body: some View {
         VStack {
             Spacer()
-            Text("\(MathGameTest.num1)")
+            Text("\(MathGameTest.num1) \(MathGameTest.shouldAdd ? "+" : "-") \(MathGameTest.num2) = ?")
+                .font(.largeTitle)
             Spacer()
             HStack(spacing: 10) {
                 Button(action: {
@@ -49,6 +50,7 @@ struct MathGameView: View {
                         .frame(maxWidth: 200, maxHeight: 200)
                         .background(Color.blue)
                         .cornerRadius(15)
+                        .font(.largeTitle)
                 }
                 Button(action: {
                     // button action here
@@ -57,6 +59,7 @@ struct MathGameView: View {
                         .frame(maxWidth: 200, maxHeight: 200)
                         .background(Color.red)
                         .cornerRadius(15)
+                        .font(.largeTitle)
                 }
             }
             HStack {
@@ -67,6 +70,8 @@ struct MathGameView: View {
                         .frame(maxWidth: 200, maxHeight: 200)
                         .background(Color.green)
                         .cornerRadius(15)
+                        .font(.largeTitle)
+
                 }
                 Button(action: {
                     // button action here
@@ -75,6 +80,7 @@ struct MathGameView: View {
                         .frame(maxWidth: 200, maxHeight: 200)
                         .background(Color.yellow)
                         .cornerRadius(15)
+                        .font(.largeTitle)
                 }
             }
         }
