@@ -22,13 +22,16 @@ struct PlaygroundView: View {
     }
     
     var body: some View {
-        if let region = region {
-            Map(coordinateRegion: region,
-                interactionModes: .all,
-                showsUserLocation: true,
-                userTrackingMode: .constant(.follow))
-            .ignoresSafeArea()
-            .frame(width: 400, height: 700)
+        VStack {
+            if let region = region {
+                Map(coordinateRegion: region,
+                    interactionModes: .all,
+                    showsUserLocation: true,
+                    userTrackingMode: .constant(.follow))
+                .ignoresSafeArea()
+                .frame(width: 400, height: 740)
+                Button("Homebutton here"){}
+            }
         }
     }
 }
