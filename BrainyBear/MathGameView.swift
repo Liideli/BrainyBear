@@ -12,12 +12,16 @@ struct MathGameView: View {
     @ObservedObject var mathGame = MathGameViewModel()
     
     var body: some View {
-        let _ = Self._printChanges()
-        VStack(spacing: 10){
+        VStack {
             Spacer()
             Text("\(mathGame.num1) \(mathGame.shouldAdd ? "+" : "-") \(mathGame.num2) = ?")
-                .font(.largeTitle)
+                .font(.custom(
+                    "AmericanTypewriter",
+                    fixedSize: 60))
+            Text("\(mathGame.currentUser.getCoins())")
             Spacer()
+        }
+        VStack(spacing: 10){
             HStack(spacing: 10) {
                 Button(action: {
                     if (mathGame.makeGuess(guess: mathGame.shuffledAnswers[0])) {
@@ -38,7 +42,7 @@ struct MathGameView: View {
                         print("Answer correct!")
                     } else {
                         print("Answer incorrect!!")
-                    }                }) {
+                    }}) {
                     Text("\(mathGame.shuffledAnswers[1])")
                         .frame(maxWidth: 175, maxHeight: 175)
                         .background(Color.red)
