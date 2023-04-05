@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6A3D4F5F29D99B2C004DBAA0 /* MathGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D4F5E29D99B2C004DBAA0 /* MathGameView.swift */; };
+		6A3D4F6129DDBCB8004DBAA0 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D4F6029DDBCB8004DBAA0 /* UserData.swift */; };
+		6A3D4F6329DDBD39004DBAA0 /* MathGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D4F6229DDBD39004DBAA0 /* MathGameViewModel.swift */; };
 		F41D653F29D4398800FE6CA6 /* BrainyBearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D653E29D4398800FE6CA6 /* BrainyBearApp.swift */; };
 		F41D654129D4398800FE6CA6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D654029D4398800FE6CA6 /* ContentView.swift */; };
 		F41D654329D4398900FE6CA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41D654229D4398900FE6CA6 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		6A3D4F5E29D99B2C004DBAA0 /* MathGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathGameView.swift; sourceTree = "<group>"; };
+		6A3D4F6029DDBCB8004DBAA0 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		6A3D4F6229DDBD39004DBAA0 /* MathGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathGameViewModel.swift; sourceTree = "<group>"; };
 		F41D653B29D4398800FE6CA6 /* BrainyBear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainyBear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41D653E29D4398800FE6CA6 /* BrainyBearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainyBearApp.swift; sourceTree = "<group>"; };
 		F41D654029D4398800FE6CA6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				F41D654229D4398900FE6CA6 /* Assets.xcassets */,
 				F41D654429D4398900FE6CA6 /* Preview Content */,
 				6A3D4F5E29D99B2C004DBAA0 /* MathGameView.swift */,
+				6A3D4F6029DDBCB8004DBAA0 /* UserData.swift */,
+				6A3D4F6229DDBD39004DBAA0 /* MathGameViewModel.swift */,
 			);
 			path = BrainyBear;
 			sourceTree = "<group>";
@@ -262,7 +268,9 @@
 			files = (
 				6A3D4F5F29D99B2C004DBAA0 /* MathGameView.swift in Sources */,
 				F41D654129D4398800FE6CA6 /* ContentView.swift in Sources */,
+				6A3D4F6129DDBCB8004DBAA0 /* UserData.swift in Sources */,
 				F41D653F29D4398800FE6CA6 /* BrainyBearApp.swift in Sources */,
+				6A3D4F6329DDBD39004DBAA0 /* MathGameViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
