@@ -44,3 +44,23 @@ extension MKCoordinateRegion {
         return Binding<MKCoordinateRegion>(.constant(self))
     }
 }
+
+/**
+extension URLSession {
+    func fetchData(at url: URL, completion: @escaping (Result<[Model], Error>) -> Void) {
+        self.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+            }
+            
+            if let data = data {
+                do {
+                    let model = try JSONDecoder().decode([Model].self, from: data)
+                    completion(.success(model))
+                } catch let decoderError {
+                    completion(.failure(decoderError))
+                }
+            }
+        }.resume()
+    }
+} */

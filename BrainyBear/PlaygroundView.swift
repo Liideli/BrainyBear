@@ -10,6 +10,8 @@ import MapKit
 
 struct PlaygroundView: View {
     
+    @ObservedObject var datas = Json()
+    
     @StateObject var manager = LocationManager()
     
     var region: Binding<MKCoordinateRegion>? {
@@ -22,6 +24,22 @@ struct PlaygroundView: View {
     }
     
     var body: some View {
+        
+        NavigationView {
+            List(datas.json) { item in
+                
+                HStack {
+                    Text("\(item.name.fi)")
+                    Spacer()
+                    Text("\(item.street_address.fi)")
+                    Spacer()
+                    //Text("\(item.location.coordinates)")
+
+                }
+            }
+        }
+        
+        /**
         VStack {
             if let region = region {
                 Map(coordinateRegion: region,
@@ -32,7 +50,38 @@ struct PlaygroundView: View {
                 .frame(width: 400, height: 740)
                 Button("Homebutton here"){}
             }
-        }
+        }*/
+    }
+}
+
+class Json: ObservableObject {
+    @Published var json = [Model]()
+    
+    init() {
+        load()
+    }
+    
+    func load() {
+        let path = Bundle.main.path(forResource: "locations", ofType: "json")
+        let url = URL(fileURLWithPath: path!)
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            do {
+                if let data = data {
+                    let json = try JSONDecoder().decode([Model].self, from: data)
+                    
+                    DispatchQueue.main.sync {
+                        self.json = json
+                    }
+                    
+                } else {
+                    print("No data")
+                }
+            } catch {
+                print(error)
+            }
+        }.resume()
     }
 }
 
@@ -41,3 +90,4 @@ struct PlaygroundView_Previews: PreviewProvider {
         PlaygroundView()
     }
 }
+
