@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD445CDB29E1CBDB0069A787 /* StoryUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD445CDA29E1CBDB0069A787 /* StoryUI.swift */; };
+		CD445CDF29E1CEE20069A787 /* stories.json in Resources */ = {isa = PBXBuildFile; fileRef = CD445CDE29E1CEE20069A787 /* stories.json */; };
+		CD445CE129E1D0830069A787 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD445CE029E1D0830069A787 /* Story.swift */; };
 		F41D653F29D4398800FE6CA6 /* BrainyBearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D653E29D4398800FE6CA6 /* BrainyBearApp.swift */; };
 		F41D654129D4398800FE6CA6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D654029D4398800FE6CA6 /* ContentView.swift */; };
 		F41D654329D4398900FE6CA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41D654229D4398900FE6CA6 /* Assets.xcassets */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD445CDA29E1CBDB0069A787 /* StoryUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryUI.swift; sourceTree = "<group>"; };
+		CD445CDE29E1CEE20069A787 /* stories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stories.json; sourceTree = "<group>"; };
+		CD445CE029E1D0830069A787 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		F41D653B29D4398800FE6CA6 /* BrainyBear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainyBear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41D653E29D4398800FE6CA6 /* BrainyBearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainyBearApp.swift; sourceTree = "<group>"; };
 		F41D654029D4398800FE6CA6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +104,9 @@
 				F41D654029D4398800FE6CA6 /* ContentView.swift */,
 				F41D654229D4398900FE6CA6 /* Assets.xcassets */,
 				F41D654429D4398900FE6CA6 /* Preview Content */,
+				CD445CDA29E1CBDB0069A787 /* StoryUI.swift */,
+				CD445CDE29E1CEE20069A787 /* stories.json */,
+				CD445CE029E1D0830069A787 /* Story.swift */,
 			);
 			path = BrainyBear;
 			sourceTree = "<group>";
@@ -231,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD445CDF29E1CEE20069A787 /* stories.json in Resources */,
 				F41D654629D4398900FE6CA6 /* Preview Assets.xcassets in Resources */,
 				F41D654329D4398900FE6CA6 /* Assets.xcassets in Resources */,
 			);
@@ -258,7 +268,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F41D654129D4398800FE6CA6 /* ContentView.swift in Sources */,
+				CD445CDB29E1CBDB0069A787 /* StoryUI.swift in Sources */,
 				F41D653F29D4398800FE6CA6 /* BrainyBearApp.swift in Sources */,
+				CD445CE129E1D0830069A787 /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
