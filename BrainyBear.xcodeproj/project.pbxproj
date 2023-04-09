@@ -15,7 +15,6 @@
 		F41D655A29D4398900FE6CA6 /* BrainyBearUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D655929D4398900FE6CA6 /* BrainyBearUITests.swift */; };
 		F41D655C29D4398900FE6CA6 /* BrainyBearUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D655B29D4398900FE6CA6 /* BrainyBearUITestsLaunchTests.swift */; };
 		F464A1D329DA17FC00DA0F68 /* AugmentedRealityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F464A1D229DA17FC00DA0F68 /* AugmentedRealityView.swift */; };
-		F464A1D529DA19B400DA0F68 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = F464A1D429DA19B400DA0F68 /* Experience.rcproject */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +46,6 @@
 		F41D655929D4398900FE6CA6 /* BrainyBearUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainyBearUITests.swift; sourceTree = "<group>"; };
 		F41D655B29D4398900FE6CA6 /* BrainyBearUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainyBearUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F464A1D229DA17FC00DA0F68 /* AugmentedRealityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedRealityView.swift; sourceTree = "<group>"; };
-		F464A1D429DA19B400DA0F68 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; name = Experience.rcproject; path = ../../ArTest2/ArTest2/Experience.rcproject; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +96,6 @@
 		F41D653D29D4398800FE6CA6 /* BrainyBear */ = {
 			isa = PBXGroup;
 			children = (
-				F464A1D429DA19B400DA0F68 /* Experience.rcproject */,
 				F41D653E29D4398800FE6CA6 /* BrainyBearApp.swift */,
 				F41D654029D4398800FE6CA6 /* ContentView.swift */,
 				F464A1D229DA17FC00DA0F68 /* AugmentedRealityView.swift */,
@@ -265,7 +262,6 @@
 			files = (
 				F41D654129D4398800FE6CA6 /* ContentView.swift in Sources */,
 				F41D653F29D4398800FE6CA6 /* BrainyBearApp.swift in Sources */,
-				F464A1D529DA19B400DA0F68 /* Experience.rcproject in Sources */,
 				F464A1D329DA17FC00DA0F68 /* AugmentedRealityView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
