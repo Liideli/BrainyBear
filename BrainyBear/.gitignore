@@ -10,7 +10,7 @@
 *.pbxuser
 *.xcworkspace
 *.xcuserstate
-xcuserdata
+*.xcuserdata
 
 # Build products
 build/
