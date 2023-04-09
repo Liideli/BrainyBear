@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6A0BF65629DAF39800AA20D8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0BF65529DAF39800AA20D8 /* Model.swift */; };
+		6A607E2229E2C34500296FF9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6A607E2129E2C34500296FF9 /* .gitignore */; };
 		6ACF9D7529DD919800C17FDB /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ACF9D7429DD919800C17FDB /* locations.json */; };
 		6AD30AD529D7081B0089F1CC /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD30AD429D7081B0089F1CC /* PlaygroundView.swift */; };
 		6AD30AD929D711740089F1CC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD30AD829D711730089F1CC /* LocationManager.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		6A0BF65529DAF39800AA20D8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		6A607E2129E2C34500296FF9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		6ACF9D7329DD8D9400C17FDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6ACF9D7429DD919800C17FDB /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		6AD30AD429D7081B0089F1CC /* PlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				6AD30AD829D711730089F1CC /* LocationManager.swift */,
 				6A0BF65529DAF39800AA20D8 /* Model.swift */,
 				6ACF9D7429DD919800C17FDB /* locations.json */,
+				6A607E2129E2C34500296FF9 /* .gitignore */,
 			);
 			path = BrainyBear;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A607E2229E2C34500296FF9 /* .gitignore in Resources */,
 				F41D654629D4398900FE6CA6 /* Preview Assets.xcassets in Resources */,
 				F41D654329D4398900FE6CA6 /* Assets.xcassets in Resources */,
 				6ACF9D7529DD919800C17FDB /* locations.json in Resources */,
