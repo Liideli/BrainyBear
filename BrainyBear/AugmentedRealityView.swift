@@ -8,6 +8,7 @@
 import SwiftUI
 import RealityKit
 
+
 struct AugmentedRealityView : View {
     var body: some View {
         ARViewContainer().edgesIgnoringSafeArea(.all)
@@ -17,7 +18,7 @@ struct AugmentedRealityView : View {
 struct ARViewContainer: UIViewRepresentable {
     
     func makeUIView(context: Context) -> ARView {
-        
+
         let arView = ARView(frame: .zero)
         
         // Load the "Box" scene from the "Experience" Reality File
@@ -34,13 +35,14 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {}
+
     
 }
 
 #if DEBUG
 struct AugmentedRealityView_Previews : PreviewProvider {
     static var previews: some View {
-        ContentView()
+        AugmentedRealityView()
     }
 }
 #endif

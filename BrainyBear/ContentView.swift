@@ -59,6 +59,14 @@ struct ContentView: View {
                 Image("cuteBear2").resizable()
                     .frame(width: 420, height: 420)
             }
+            VStack {
+                NavigationLink("AR", destination: AugmentedRealityView())
+                .padding(10)
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+
+            }
          
                 VStack{
                     HStack {
