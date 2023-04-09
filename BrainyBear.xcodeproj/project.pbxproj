@@ -47,7 +47,7 @@
 		F41D655929D4398900FE6CA6 /* BrainyBearUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainyBearUITests.swift; sourceTree = "<group>"; };
 		F41D655B29D4398900FE6CA6 /* BrainyBearUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainyBearUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F464A1D229DA17FC00DA0F68 /* AugmentedRealityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedRealityView.swift; sourceTree = "<group>"; };
-		F464A1D429DA19B400DA0F68 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; name = Experience.rcproject; path = ../../ArTest2/ArTest2/Experience.rcproject; sourceTree = "<group>"; };
+		F464A1D429DA19B400DA0F68 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
