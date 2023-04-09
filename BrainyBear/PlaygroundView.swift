@@ -29,12 +29,11 @@ struct PlaygroundView: View {
             List(datas.json) { item in
                 
                 HStack {
-                    Text("\(item.name.fi)")
+                    Text("\(item.name.en ?? item.name.fi)")
                     Spacer()
                     Text("\(item.street_address.fi)")
                     Spacer()
-                    //Text("\(item.location.coordinates)")
-
+                    Text("\(item.location.coordinates[0])")
                 }
             }
         }
@@ -70,6 +69,7 @@ class Json: ObservableObject {
             do {
                 if let data = data {
                     let json = try JSONDecoder().decode([Model].self, from: data)
+                    print(json)
                     
                     DispatchQueue.main.sync {
                         self.json = json

@@ -12,11 +12,11 @@ struct Model: Codable, Identifiable {
     let id: Int
     let name: Name
     let street_address: Address
-    //let location: Location
+    let location: Location
     
     enum CodingKeys: String, CodingKey {
         case id, name, street_address
-        //case location
+        case location
     }
 }
 
@@ -37,11 +37,12 @@ struct Address: Codable {
         case fi, sv, en
     }
 }
-/**
+
 struct Location: Codable {
-    let coordinates: [Double : Double]
+    let type: String
+    let coordinates: [Double]
     enum CodingKeys: String, CodingKey {
-        case coordinates
+        case type, coordinates
     }
 }
-*/
+
