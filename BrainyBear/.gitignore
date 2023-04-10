@@ -11,6 +11,7 @@
 *.xcworkspace
 *.xcuserstate
 *.xcuserdata
+.plist
 
 # Build products
 build/
