@@ -24,7 +24,11 @@ struct ARViewContainer: UIViewRepresentable {
         let boxAnchor = try! Experience.loadBox()
         
         // Scale the object
+<<<<<<< HEAD
         boxAnchor.scale = SIMD3<Float>(0.15, 0.15, 0.15)
+=======
+        boxAnchor.scale = SIMD3<Float>(0.1, 0.1, 0.1)
+>>>>>>> game-screen
         
         // Add the box anchor to the scene
         arView.scene.anchors.append(boxAnchor)

@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		6A0BF65629DAF39800AA20D8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0BF65529DAF39800AA20D8 /* Model.swift */; };
 		6A607E2229E2C34500296FF9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6A607E2129E2C34500296FF9 /* .gitignore */; };
 		6ACF9D7529DD919800C17FDB /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ACF9D7429DD919800C17FDB /* locations.json */; };
 		6AD30AD529D7081B0089F1CC /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD30AD429D7081B0089F1CC /* PlaygroundView.swift */; };
 		6AD30AD929D711740089F1CC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD30AD829D711730089F1CC /* LocationManager.swift */; };
+=======
+		6A3D4F5F29D99B2C004DBAA0 /* MathGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D4F5E29D99B2C004DBAA0 /* MathGameView.swift */; };
+		6A3D4F6129DDBCB8004DBAA0 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D4F6029DDBCB8004DBAA0 /* UserData.swift */; };
+		6A3D4F6329DDBD39004DBAA0 /* MathGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D4F6229DDBD39004DBAA0 /* MathGameViewModel.swift */; };
+>>>>>>> game-screen
 		F41D653F29D4398800FE6CA6 /* BrainyBearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D653E29D4398800FE6CA6 /* BrainyBearApp.swift */; };
 		F41D654129D4398800FE6CA6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D654029D4398800FE6CA6 /* ContentView.swift */; };
 		F41D654329D4398900FE6CA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41D654229D4398900FE6CA6 /* Assets.xcassets */; };
@@ -41,12 +47,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		6A0BF65529DAF39800AA20D8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		6A607E2129E2C34500296FF9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		6ACF9D7329DD8D9400C17FDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6ACF9D7429DD919800C17FDB /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		6AD30AD429D7081B0089F1CC /* PlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundView.swift; sourceTree = "<group>"; };
 		6AD30AD829D711730089F1CC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+=======
+		6A3D4F5E29D99B2C004DBAA0 /* MathGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathGameView.swift; sourceTree = "<group>"; };
+		6A3D4F6029DDBCB8004DBAA0 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		6A3D4F6229DDBD39004DBAA0 /* MathGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathGameViewModel.swift; sourceTree = "<group>"; };
+>>>>>>> game-screen
 		F41D653B29D4398800FE6CA6 /* BrainyBear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainyBear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41D653E29D4398800FE6CA6 /* BrainyBearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainyBearApp.swift; sourceTree = "<group>"; };
 		F41D654029D4398800FE6CA6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,7 +70,11 @@
 		F41D655929D4398900FE6CA6 /* BrainyBearUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainyBearUITests.swift; sourceTree = "<group>"; };
 		F41D655B29D4398900FE6CA6 /* BrainyBearUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainyBearUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F464A1D229DA17FC00DA0F68 /* AugmentedRealityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedRealityView.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		F464A1D429DA19B400DA0F68 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
+=======
+		F464A1D429DA19B400DA0F68 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; name = Experience.rcproject; path = ../../ArTest2/ArTest2/Experience.rcproject; sourceTree = "<group>"; };
+>>>>>>> game-screen
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,17 +125,27 @@
 		F41D653D29D4398800FE6CA6 /* BrainyBear */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				6ACF9D7329DD8D9400C17FDB /* Info.plist */,
+=======
+				F464A1D429DA19B400DA0F68 /* Experience.rcproject */,
+>>>>>>> game-screen
 				F41D653E29D4398800FE6CA6 /* BrainyBearApp.swift */,
 				F41D654029D4398800FE6CA6 /* ContentView.swift */,
 				F464A1D229DA17FC00DA0F68 /* AugmentedRealityView.swift */,
 				F41D654229D4398900FE6CA6 /* Assets.xcassets */,
 				F41D654429D4398900FE6CA6 /* Preview Content */,
+<<<<<<< HEAD
 				6AD30AD429D7081B0089F1CC /* PlaygroundView.swift */,
 				6AD30AD829D711730089F1CC /* LocationManager.swift */,
 				6A0BF65529DAF39800AA20D8 /* Model.swift */,
 				6ACF9D7429DD919800C17FDB /* locations.json */,
 				6A607E2129E2C34500296FF9 /* .gitignore */,
+=======
+				6A3D4F5E29D99B2C004DBAA0 /* MathGameView.swift */,
+				6A3D4F6029DDBCB8004DBAA0 /* UserData.swift */,
+				6A3D4F6229DDBD39004DBAA0 /* MathGameViewModel.swift */,
+>>>>>>> game-screen
 			);
 			path = BrainyBear;
 			sourceTree = "<group>";
@@ -281,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				6A0BF65629DAF39800AA20D8 /* Model.swift in Sources */,
 				F41D654129D4398800FE6CA6 /* ContentView.swift in Sources */,
 				6AD30AD529D7081B0089F1CC /* PlaygroundView.swift in Sources */,
@@ -288,6 +315,18 @@
 				F41D653F29D4398800FE6CA6 /* BrainyBearApp.swift in Sources */,
 				F464A1D529DA19B400DA0F68 /* Experience.rcproject in Sources */,
 				F464A1D329DA17FC00DA0F68 /* AugmentedRealityView.swift in Sources */,
+=======
+				6A3D4F5F29D99B2C004DBAA0 /* MathGameView.swift in Sources */,
+				F41D654129D4398800FE6CA6 /* ContentView.swift in Sources */,
+				6A3D4F6129DDBCB8004DBAA0 /* UserData.swift in Sources */,
+				F41D653F29D4398800FE6CA6 /* BrainyBearApp.swift in Sources */,
+<<<<<<< HEAD
+				6A3D4F6329DDBD39004DBAA0 /* MathGameViewModel.swift in Sources */,
+=======
+				F464A1D529DA19B400DA0F68 /* Experience.rcproject in Sources */,
+				F464A1D329DA17FC00DA0F68 /* AugmentedRealityView.swift in Sources */,
+>>>>>>> ea60992ef20b6f41baae3961b67416568dcddad9
+>>>>>>> game-screen
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
