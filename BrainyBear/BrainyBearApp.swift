@@ -14,6 +14,8 @@ struct BrainyBearApp: App {
             NavigationView {
                 ContentView()
             }
+            //ContentView()
+            PlaygroundView()
         }
     }
 }
