@@ -12,44 +12,42 @@ struct PlaygroundView: View {
     
     @ObservedObject var datas = Json()
     
+    @State var model: [Model] = []
+    
     @StateObject var manager = LocationManager()
     
     var region: Binding<MKCoordinateRegion>? {
         guard let location = manager.location else {
             return MKCoordinateRegion.goldenGateRegion().getBinding()
         }
-        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 5000, longitudinalMeters: 5000)
         
         return region.getBinding()
     }
     
     var body: some View {
-        
-        NavigationView {
-            List(datas.json) { item in
-                
-                HStack {
-                    Text("\(item.name.en ?? item.name.fi)")
-                    Spacer()
-                    Text("\(item.street_address.fi)")
-                    Spacer()
-                    Text("\(item.location.coordinates[0])")
+        VStack {
+            if let region = region {
+                Map(
+                    coordinateRegion: region,
+                    interactionModes: .all,
+                    showsUserLocation: true,
+                    userTrackingMode: .constant(.follow),
+                    annotationItems: model
+                ) { model in
+                    MapAnnotation(
+                        coordinate: CLLocationCoordinate2D(
+                            latitude: model.location.coordinates[0],
+                            longitude: model.location.coordinates[1]
+                        )
+                    ){
+                        VStack {
+                            Text(model.name.en ?? model.name.fi)
+                        }
+                    }
                 }
             }
         }
-        
-        /**
-        VStack {
-            if let region = region {
-                Map(coordinateRegion: region,
-                    interactionModes: .all,
-                    showsUserLocation: true,
-                    userTrackingMode: .constant(.follow))
-                .ignoresSafeArea()
-                .frame(width: 400, height: 740)
-                Button("Homebutton here"){}
-            }
-        }*/
     }
 }
 
