@@ -12,6 +12,8 @@ import SwiftUI
 extension Color {
     static let bbBabyBlue = Color("BBBabyBlue")
     static let bbBrown = Color("BBBrown")
+    static let bbLightBrown = Color("BBLightBrown")
     static let bbLilac = Color("BBLilac")
     static let bbBlack = Color("BBBlack")
+    
 }
