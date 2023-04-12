@@ -20,7 +20,7 @@ struct PlaygroundView: View {
         guard let location = manager.location else {
             return MKCoordinateRegion.goldenGateRegion().getBinding()
         }
-        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 5000, longitudinalMeters: 5000)
+        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
         
         return region.getBinding()
     }
@@ -37,8 +37,8 @@ struct PlaygroundView: View {
                 ) { model in
                     MapAnnotation(
                         coordinate: CLLocationCoordinate2D(
-                            latitude: model.location.coordinates[0],
-                            longitude: model.location.coordinates[1]
+                            latitude: model.location.coordinates[1],
+                            longitude: model.location.coordinates[0]
                         )
                     ){
                         VStack {
@@ -77,7 +77,7 @@ class Json: ObservableObject {
                     print("No data")
                 }
             } catch {
-                print(error)
+                print("Error decoding JSON: \(error.localizedDescription)")
             }
         }.resume()
     }

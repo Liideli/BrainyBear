@@ -15,8 +15,7 @@ struct Model: Codable, Identifiable {
     let location: Location
     
     enum CodingKeys: String, CodingKey {
-        case id, name, street_address
-        case location
+        case id, name, street_address, location
     }
 }
 
@@ -45,4 +44,5 @@ struct Location: Codable {
         case type, coordinates
     }
 }
+
 
