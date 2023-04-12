@@ -72,7 +72,7 @@ struct ContentView: View {
                 VStack{
                     HStack {
                         NavigationLink("Playground", destination: PlaygroundView())
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .frame(maxWidth: 175, maxHeight: 175)
                             .padding()
                             . background(Color.green)
                             .foregroundColor(.white)
@@ -93,14 +93,14 @@ struct ContentView: View {
                     
                     HStack {
                         NavigationLink("Story", destination: StoryUI())
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .frame(maxWidth: 175, maxHeight: 175)
                             .padding()
                             . background(Color.red)
                             .foregroundColor(.white)
                             .cornerRadius(10)
                         
                         NavigationLink("4+4", destination: MathGameView())
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .frame(maxWidth: 175, maxHeight: 175)
                             .padding()
                             . background(Color.blue)
                             .foregroundColor(.white)

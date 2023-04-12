@@ -12,16 +12,24 @@ struct MathGameView: View {
     @ObservedObject var mathGame = MathGameViewModel()
     
     var body: some View {
-        VStack {
-            Spacer()
-            Text("\(mathGame.num1) \(mathGame.shouldAdd ? "+" : "-") \(mathGame.num2) = ?")
-                .font(.custom(
-                    "AmericanTypewriter",
-                    fixedSize: 60))
-            Text("\(mathGame.currentUser.getCoins())")
-            Spacer()
-        }
-        VStack(spacing: 10){
+        VStack{
+            HStack {
+                Spacer()
+                Text("💰 \(mathGame.currentUser.getCoins())")
+                    .foregroundColor(Color.white)
+                    .padding()
+                    .background(Color.bbBabyBlue, in: Capsule())
+                    .font(.custom("Verdana", fixedSize: 25))
+                    .padding()
+            }
+            VStack {
+                Spacer()
+                Text("\(mathGame.num1) \(mathGame.shouldAdd ? "+" : "-") \(mathGame.num2) = ?")
+                    .font(.custom(
+                        "AmericanTypewriter",
+                        fixedSize: 60))
+                Spacer()
+            }
             HStack(spacing: 10) {
                 Button(action: {
                     if (mathGame.makeGuess(guess: mathGame.shuffledAnswers[0])) {
