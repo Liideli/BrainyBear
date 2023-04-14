@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
-
+import AVFoundation
 
 
 struct StoryUI: View {
     @State private var currentIndex = 0
         let stories = StoryManager.shared.getStories()
-        
+    @State private var isSpeaking = false
+    private let synthesizer = AVSpeechSynthesizer()
         var body: some View {
             ScrollView {
                  
@@ -33,6 +34,22 @@ struct StoryUI: View {
                                     .background(Color.blue)
                                     .cornerRadius(10)
                     })
+                Button(isSpeaking ? "Stop Speaking" : "Speak") {
+                                   if isSpeaking {
+                                       synthesizer.stopSpeaking(at: .immediate)
+                                   } else {
+                                       let utterance = AVSpeechUtterance(string: stories[currentIndex].content)
+                                       synthesizer.speak(utterance)
+                                   }
+                                   isSpeaking.toggle()
+                                    
+                               }
+                                .padding()
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .foregroundColor(.white)
+                                .background(Color.blue)
+                                .cornerRadius(10)
+
                 }
                 .padding()
                 .navigationBarTitle("Stories")
