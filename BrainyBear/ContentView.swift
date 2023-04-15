@@ -61,7 +61,7 @@ struct ContentView: View {
                                 Image(systemName: "camera.viewfinder")
                             }
                             .padding(10)
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color.bbBlack)
                             .font(.system(size: 35))
                             .background(Color.bbLilac, in: Capsule())
                             .offset(y: -90)
