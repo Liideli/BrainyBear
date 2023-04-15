@@ -78,16 +78,12 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .cornerRadius(10)
                         
-                        Button(action: {
-                            // Action for button 3
-                        }, label: {
-                            Text("Button 3")
-                        })
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        . background(Color.yellow)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
+                        NavigationLink("Drawing", destination: CanvasView())
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .padding()
+                            . background(Color.yellow)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
                     }
                     .frame(height: 50)
                     
