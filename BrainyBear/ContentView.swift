@@ -51,26 +51,33 @@ struct ContentView: View {
                         }
                         Spacer()
                         VStack{
-                            /*Image("cuteBear2").resizable()
-                                .background(Color.bbLilac, in: Capsule())
-                                .cornerRadius(15)
-                                .shadow(radius: 5)
-                                .padding()*/
-                            SceneView(scene: SCNScene(named: "teddy.dae"), options: [.autoenablesDefaultLighting,.allowsCameraControl])
+                            SceneView(scene: SCNScene(named: "Brian.usdc"), options: [.autoenablesDefaultLighting,.allowsCameraControl])
                                 .padding()
                                 .shadow(radius: 15)
-                            NavigationLink {
-                                AugmentedRealityView()
-                            } label: {
-                                Image(systemName: "camera.viewfinder")
+                            HStack {
+                                NavigationLink {
+                                    AugmentedRealityView()
+                                } label: {
+                                    Image(systemName: "camera.viewfinder")
+                                }
+                                .padding(10)
+                                .foregroundColor(Color.bbBlack)
+                                .font(.system(size: 35))
+                                .background(Color.bbLilac, in: Capsule())
+                                .offset(y: -90)
+                                .padding(.bottom, -90)
+                                NavigationLink {
+                                    AugmentedRealityView()
+                                } label: {
+                                    Image(systemName: "mic.circle")
+                                }
+                                .padding(10)
+                                .foregroundColor(Color.bbBlack)
+                                .font(.system(size: 35))
+                                .background(Color.bbLilac, in: Capsule())
+                                .offset(y: -90)
+                                .padding(.bottom, -90)
                             }
-                            .padding(10)
-                            .foregroundColor(Color.bbBlack)
-                            .font(.system(size: 35))
-                            .background(Color.bbLilac, in: Capsule())
-                            .offset(y: -90)
-                            .padding(.bottom, -90)
-                            
                             HStack {
                                 NavigationLink{
                                     PlaygroundView()
