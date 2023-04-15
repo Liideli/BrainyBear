@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SceneKit
 
 struct ContentView: View {
     @ObservedObject var mathGame = MathGameViewModel()
@@ -50,11 +51,14 @@ struct ContentView: View {
                         }
                         Spacer()
                         VStack{
-                            Image("cuteBear2").resizable()
+                            /*Image("cuteBear2").resizable()
                                 .background(Color.bbLilac, in: Capsule())
                                 .cornerRadius(15)
                                 .shadow(radius: 5)
+                                .padding()*/
+                            SceneView(scene: SCNScene(named: "teddy.dae"), options: [.autoenablesDefaultLighting,.allowsCameraControl])
                                 .padding()
+                                .shadow(radius: 15)
                             NavigationLink {
                                 AugmentedRealityView()
                             } label: {
