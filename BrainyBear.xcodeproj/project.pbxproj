@@ -13,6 +13,7 @@
 		6A3D4F6129DDBCB8004DBAA0 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D4F6029DDBCB8004DBAA0 /* UserData.swift */; };
 		6A3D4F6329DDBD39004DBAA0 /* MathGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D4F6229DDBD39004DBAA0 /* MathGameViewModel.swift */; };
 		6A607E2229E2C34500296FF9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6A607E2129E2C34500296FF9 /* .gitignore */; };
+		6A7CEA7529EB164D0005EDFD /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7CEA7429EB164D0005EDFD /* InfoView.swift */; };
 		6ACF9D7529DD919800C17FDB /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ACF9D7429DD919800C17FDB /* locations.json */; };
 		6AD30AD529D7081B0089F1CC /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD30AD429D7081B0089F1CC /* PlaygroundView.swift */; };
 		6AD30AD929D711740089F1CC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD30AD829D711730089F1CC /* LocationManager.swift */; };
@@ -54,6 +55,7 @@
 		6A3D4F6029DDBCB8004DBAA0 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		6A3D4F6229DDBD39004DBAA0 /* MathGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathGameViewModel.swift; sourceTree = "<group>"; };
 		6A607E2129E2C34500296FF9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		6A7CEA7429EB164D0005EDFD /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		6ACF9D7329DD8D9400C17FDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6ACF9D7429DD919800C17FDB /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		6AD30AD429D7081B0089F1CC /* PlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundView.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				CD445CDE29E1CEE20069A787 /* stories.json */,
 				CD445CE029E1D0830069A787 /* Story.swift */,
 				6A02604129E716E10088E99E /* UIThemeVariables.swift */,
+				6A7CEA7429EB164D0005EDFD /* InfoView.swift */,
 			);
 			path = BrainyBear;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				6AD30AD929D711740089F1CC /* LocationManager.swift in Sources */,
 				F41D653F29D4398800FE6CA6 /* BrainyBearApp.swift in Sources */,
 				F464A1D529DA19B400DA0F68 /* Experience.rcproject in Sources */,
+				6A7CEA7529EB164D0005EDFD /* InfoView.swift in Sources */,
 				F464A1D329DA17FC00DA0F68 /* AugmentedRealityView.swift in Sources */,
 				6A3D4F5F29D99B2C004DBAA0 /* MathGameView.swift in Sources */,
 				F41D654129D4398800FE6CA6 /* ContentView.swift in Sources */,

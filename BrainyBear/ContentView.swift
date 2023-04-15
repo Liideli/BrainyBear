@@ -15,28 +15,17 @@ struct ContentView: View {
                 .ignoresSafeArea()
                 .overlay(
                     VStack {
-                        /*                HStack{
-                         Text("BrainyBear")
-                         .font(.headline)
-                         .fontWeight(.bold)
-                         .foregroundColor(Color(hue: 1.0, saturation: 0.664, brightness: 0.45))
-                         .multilineTextAlignment(.center)
-                         .frame(maxWidth: .infinity)
-                         .padding()
-                         }
-                         Divider() */
                         HStack {
-                            Button(action: {
-                                // Action for the left button
-                            }, label: {
+                            NavigationLink {
+                                InfoView()
+                            } label: {
                                 Image(systemName: "info.circle")
                                     .padding()
                                     .font(.system(size: 25))
                                     .background(Color.bbLilac, in: Capsule())
                                     .foregroundColor(.bbBlack)
-                                    .cornerRadius(40)
                                     .padding()
-                            })
+                            }
                             Spacer()
                             HStack {
                                 Text("💰 \(mathGame.currentUser.getCoins())")
@@ -48,17 +37,16 @@ struct ContentView: View {
                                     .padding()
                             }
                             Spacer()
-                            Button(action: {
-                                // Action for the right button
-                            }, label: {
+                            NavigationLink {
+                                MathGameView()
+                            } label: {
                                 Image(systemName: "gearshape.fill")
                                     .padding()
                                     .font(.system(size: 25))
                                     .background(Color.bbLilac, in: Capsule())
                                     .foregroundColor(.bbBlack)
-                                    .cornerRadius(40)
                                     .padding()
-                            })
+                            }
                         }
                         Spacer()
                         VStack{
@@ -76,7 +64,6 @@ struct ContentView: View {
                             .foregroundColor(Color.black)
                             .font(.system(size: 35))
                             .background(Color.bbLilac, in: Capsule())
-                            .cornerRadius(10)
                             .offset(y: -90)
                             .padding(.bottom, -90)
                             
@@ -134,7 +121,7 @@ struct ContentView: View {
                                     VStack {
                                         Image(systemName: "plus.forwardslash.minus")
                                             .font(.system(size: 60))
-                                        Text("Map")
+                                        Text("Math")
                                             .font(.system(size: 25))
                                     }
                                 }
