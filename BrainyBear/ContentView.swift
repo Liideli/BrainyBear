@@ -9,6 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @State var progress = 0.7
+    let info:LocalizedStringKey = "info"
+    let settings:LocalizedStringKey = "settings"
+    let AR:LocalizedStringKey = "AR"
+    let playground:LocalizedStringKey = "playground"
+    let draw:LocalizedStringKey = "draw"
+    let story:LocalizedStringKey = "story"
+    let math:LocalizedStringKey = "math"
+
     var body: some View {
         NavigationView {
             VStack {
@@ -27,7 +35,7 @@ struct ContentView: View {
                         Button(action: {
                             // Action for the left button
                         }, label: {
-                            Text("Info")
+                            Text(info)
                                 .frame(maxWidth: 30, maxHeight: 30)
                                 .padding()
                                 .background(Color.blue)
@@ -38,7 +46,7 @@ struct ContentView: View {
                         Button(action: {
                             // Action for the right button
                         }, label: {
-                            Text("Settings")
+                            Text(settings)
                                 .frame(maxWidth: 30, maxHeight: 30)
                                 .padding()
                                 .background(Color.blue)
@@ -61,7 +69,7 @@ struct ContentView: View {
                         .frame(width: 420, height: 420)
                 }
                 VStack {
-                    NavigationLink("AR", destination: AugmentedRealityView())
+                    NavigationLink(AR, destination: AugmentedRealityView())
                         .padding(10)
                         .background(Color.blue)
                         .foregroundColor(.white)
@@ -71,13 +79,23 @@ struct ContentView: View {
                 
                 VStack{
                     HStack {
-                        NavigationLink("Playground", destination: PlaygroundView())
+                        NavigationLink(playground, destination: PlaygroundView())
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .padding()
                             . background(Color.green)
                             .foregroundColor(.white)
                             .cornerRadius(10)
                         
+                        Button(action: {
+                            // Action for button 3
+                        }, label: {
+                            Text(draw)
+                        })
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        . background(Color.yellow)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                         NavigationLink("Drawing", destination: CanvasView())
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .padding()
@@ -88,14 +106,14 @@ struct ContentView: View {
                     .frame(height: 50)
                     
                     HStack {
-                        NavigationLink("Story", destination: StoryUI())
+                        NavigationLink(story, destination: StoryUI())
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .padding()
                             . background(Color.red)
                             .foregroundColor(.white)
                             .cornerRadius(10)
                         
-                        NavigationLink("4+4", destination: MathGameView())
+                        NavigationLink(math, destination: MathGameView())
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .padding()
                             . background(Color.blue)

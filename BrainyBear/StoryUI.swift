@@ -11,34 +11,39 @@ import AVFoundation
 
 struct StoryUI: View {
     @State private var currentIndex = 0
-        let stories = StoryManager.shared.getStories()
+    private let titles = ["title1", "title2", "title3"] // Localized string keys for titles
+    private let stories = ["story1", "story2", "story3"] // Localized string keys for stories
+    let next:LocalizedStringKey = "next"
+    let listen:LocalizedStringKey = "listen"
+    let stopListening:LocalizedStringKey = "stopListening"
+    let storiesNav:LocalizedStringKey = "storiesNav"
     @State private var isSpeaking = false
     private let synthesizer = AVSpeechSynthesizer()
         var body: some View {
             ScrollView {
                  
-                    Text(stories[currentIndex].title)
+                Text(NSLocalizedString(titles[currentIndex], comment: ""))
                         .font(.headline)
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding()
-                    Text(stories[currentIndex].content)
+                Text(NSLocalizedString(stories[currentIndex], comment: ""))
                         .font(.body)
                         .padding()
                     Button(action: {
-                        self.currentIndex = (self.currentIndex + 1) % self.stories.count
+                        currentIndex = (currentIndex + 1) % stories.count
                     }, label: {
-                        Text("Next Story")
+                        Text(next)
                             .frame(minWidth: 0, maxWidth: .infinity)
                                     .padding()
                                     .foregroundColor(.white)
                                     .background(Color.blue)
                                     .cornerRadius(10)
                     })
-                Button(isSpeaking ? "Stop Speaking" : "Speak") {
+                Button(isSpeaking ? stopListening : listen) {
                                    if isSpeaking {
                                        synthesizer.stopSpeaking(at: .immediate)
                                    } else {
-                                       let utterance = AVSpeechUtterance(string: stories[currentIndex].content)
+                                       let utterance = AVSpeechUtterance(string: NSLocalizedString(stories[currentIndex], comment: ""))
                                        synthesizer.speak(utterance)
                                    }
                                    isSpeaking.toggle()
@@ -52,7 +57,7 @@ struct StoryUI: View {
 
                 }
                 .padding()
-                .navigationBarTitle("Stories")
+                .navigationBarTitle(storiesNav)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 .alignmentGuide(.top) { d in d[VerticalAlignment.top] }
             }
