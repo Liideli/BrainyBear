@@ -37,7 +37,7 @@ struct MathGameView: View {
                     .padding()
                 Spacer()
             }
-            HStack(spacing: 10) {
+            HStack {
                 Button(action: {
                     if (mathGame.makeGuess(guess: mathGame.shuffledAnswers[0])) {
                         print("Answer correct!")
