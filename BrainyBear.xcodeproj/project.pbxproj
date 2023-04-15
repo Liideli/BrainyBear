@@ -25,6 +25,7 @@
 		F41D655029D4398900FE6CA6 /* BrainyBearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D654F29D4398900FE6CA6 /* BrainyBearTests.swift */; };
 		F41D655A29D4398900FE6CA6 /* BrainyBearUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D655929D4398900FE6CA6 /* BrainyBearUITests.swift */; };
 		F41D655C29D4398900FE6CA6 /* BrainyBearUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D655B29D4398900FE6CA6 /* BrainyBearUITestsLaunchTests.swift */; };
+		F43673E429E9EC7C005E0E76 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F43673E629E9EC7C005E0E76 /* Localizable.strings */; };
 		F464A1D329DA17FC00DA0F68 /* AugmentedRealityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F464A1D229DA17FC00DA0F68 /* AugmentedRealityView.swift */; };
 		F464A1D529DA19B400DA0F68 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = F464A1D429DA19B400DA0F68 /* Experience.rcproject */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,8 @@
 		F41D655529D4398900FE6CA6 /* BrainyBearUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainyBearUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41D655929D4398900FE6CA6 /* BrainyBearUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainyBearUITests.swift; sourceTree = "<group>"; };
 		F41D655B29D4398900FE6CA6 /* BrainyBearUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainyBearUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F43673E529E9EC7C005E0E76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F43673E729E9EC91005E0E76 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F464A1D229DA17FC00DA0F68 /* AugmentedRealityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedRealityView.swift; sourceTree = "<group>"; };
 		F464A1D429DA19B400DA0F68 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +128,7 @@
 				F464A1D429DA19B400DA0F68 /* Experience.rcproject */,
 				F41D653E29D4398800FE6CA6 /* BrainyBearApp.swift */,
 				F41D654029D4398800FE6CA6 /* ContentView.swift */,
+				F43673E629E9EC7C005E0E76 /* Localizable.strings */,
 				F464A1D229DA17FC00DA0F68 /* AugmentedRealityView.swift */,
 				F41D654229D4398900FE6CA6 /* Assets.xcassets */,
 				F41D654429D4398900FE6CA6 /* Preview Content */,
@@ -254,6 +258,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fi,
 			);
 			mainGroup = F41D653229D4398800FE6CA6;
 			productRefGroup = F41D653C29D4398800FE6CA6 /* Products */;
@@ -272,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43673E429E9EC7C005E0E76 /* Localizable.strings in Resources */,
 				6A607E2229E2C34500296FF9 /* .gitignore in Resources */,
 				CD445CDF29E1CEE20069A787 /* stories.json in Resources */,
 				F41D654629D4398900FE6CA6 /* Preview Assets.xcassets in Resources */,
@@ -352,6 +358,18 @@
 			targetProxy = F41D655629D4398900FE6CA6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F43673E629E9EC7C005E0E76 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F43673E529E9EC7C005E0E76 /* en */,
+				F43673E729E9EC91005E0E76 /* fi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F41D655D29D4398900FE6CA6 /* Debug */ = {
