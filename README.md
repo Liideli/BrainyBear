@@ -11,6 +11,9 @@ BrainyBear offers children an creative and a playful environment, where learning
 - Map View
 - Math View
 - Story View
+- Draw View
+- Text to Speech
+- Language Localization (en & fi)
 
 ## Contributors
 - [Roope Laine](https://github.com/Liideli)
