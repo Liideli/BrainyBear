@@ -6,114 +6,154 @@
 //
 
 import SwiftUI
+import SceneKit
 
 struct ContentView: View {
-    @State var progress = 0.7
+    // Localized string keys
+    let map:LocalizedStringKey = "map"
+    let draw:LocalizedStringKey = "draw"
+    let story:LocalizedStringKey = "story"
+    let math:LocalizedStringKey = "math"
+
+    @ObservedObject var mathGame = MathGameViewModel()
     var body: some View {
-        VStack {
-            HStack{
-                Text("BrainyBear")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color(hue: 1.0, saturation: 0.664, brightness: 0.45))
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-            }
-            Divider()
-            VStack {
-                        HStack {
-                            Button(action: {
-                                // Action for the left button
-                            }, label: {
-                                Text("Info")
-                                    .frame(maxWidth: 30, maxHeight: 30)
-                                    .padding()
-                                    .background(Color.blue)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(40)
-                            })
-                            Spacer()
-                            Button(action: {
-                                // Action for the right button
-                            }, label: {
-                                Text("Settings")
-                                    .frame(maxWidth: 30, maxHeight: 30)
-                                    .padding()
-                                    .background(Color.blue)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(40)
-                            })
+        NavigationView {
+            Color.bbLightBrown
+                .ignoresSafeArea()
+                .overlay(
+                    VStack {
+                        Group {
+                            HStack {
+                                NavigationLink {
+                                    InfoView()
+                                } label: {
+                                    Image(systemName: "info.circle")
+                                        .padding()
+                                        .font(.system(size: 25))
+                                        .background(Color.bbLilac, in: Capsule())
+                                        .foregroundColor(.bbBlack)
+                                        .padding()
+                                }
+                                Spacer()
+                                HStack {
+                                    Text("💰 \(mathGame.currentUser.getCoins())")
+                                        .foregroundColor(Color.bbBlack)
+                                        .padding()
+                                        .background(Color.bbLilac, in: Capsule())
+                                        .shadow(radius: 5)
+                                        .font(.custom("Verdana", fixedSize: 25))
+                                }
+                                Spacer()
+                                NavigationLink {
+                                    MathGameView()
+                                } label: {
+                                    Image(systemName: "gearshape.fill")
+                                        .padding()
+                                        .font(.system(size: 25))
+                                        .background(Color.bbLilac, in: Capsule())
+                                        .foregroundColor(.bbBlack)
+                                        .padding()
+                                }
+                            }
                         }
-                        .padding()
-                        Spacer()
-                    }
-            
-            VStack {
-                ProgressView(value: progress)
-                    .progressViewStyle(LinearProgressViewStyle())
-                    .accentColor(.green).padding()
-                    .padding(.leading)
-            }
-            VStack{
-                Image("cuteBear2").resizable()
-                    .frame(width: 420, height: 420)
-            }
-         
-                VStack{
-                    HStack {
-                                   Button(action: {
-                                       // Action for button 1
-                                   }, label: {
-                                       Text("Button 1")
-                                   })
-                                   .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                   .padding()
-                                   . background(Color.blue)
-                                   .foregroundColor(.white)
-                                   .cornerRadius(10)
-
-                                   Button(action: {
-                                       // Action for button 2
-                                   }, label: {
-                                       Text("Button 2")
-                                   })
-                                   .frame(maxWidth: .infinity)
-                                   .padding()
-                                   . background(Color.green)
-                                   .foregroundColor(.white)
-                                   .cornerRadius(10)
-                               }
-                               .frame(height: 50)
-
-                               HStack {
-                                   Button(action: {
-                                       // Action for button 3
-                                   }, label: {
-                                       Text("Button 3")
-                                   })
-                                   .frame(maxWidth: .infinity)
-                                   .padding()
-                                   . background(Color.yellow)
-                                   .foregroundColor(.white)
-                                   .cornerRadius(10)
-
-                                   Button(action: {
-                                       // Action for button 4
-                                   }, label: {
-                                       Text("Button 4")
-                                   })
-                                   .frame(maxWidth: .infinity)
-                                   .padding()
-                                   . background(Color.red)
-                                   .foregroundColor(.white)
-                                   .cornerRadius(10)
-                               }
-                               .frame(height: 50)
-                           }
-                       }
-                   }
-            
+                        .padding(.bottom, -20)
+                        VStack{
+                            SceneView(scene: SCNScene(named: "Brian.usdc"), options: [.autoenablesDefaultLighting,.allowsCameraControl])
+                                .padding()
+                                .shadow(radius: 15)
+                            HStack (spacing: 150){
+                                NavigationLink {
+                                    AugmentedRealityView()
+                                } label: {
+                                    Image(systemName: "camera.viewfinder")
+                                }
+                                .padding(10)
+                                .foregroundColor(Color.bbBlack)
+                                .font(.system(size: 35))
+                                .background(Color.bbLilac, in: Capsule())
+                                .offset(y: -90)
+                                .padding(.bottom, -90)
+                                NavigationLink {
+                                    AugmentedRealityView()
+                                } label: {
+                                    Image(systemName: "mic.circle")
+                                }
+                                .padding(10)
+                                .foregroundColor(Color.bbBlack)
+                                .font(.system(size: 35))
+                                .background(Color.bbLilac, in: Capsule())
+                                .offset(y: -90)
+                                .padding(.bottom, -90)
+                            }
+                            HStack {
+                                NavigationLink{
+                                    PlaygroundView()
+                                } label: {
+                                    VStack {
+                                        Image(systemName: "map")
+                                            .font(.system(size: 60))
+                                        Text(map)
+                                            .font(.system(size: 25))
+                                    }
+                                }
+                                .frame(width: 150, height: 150 )
+                                .background(Color.bbBabyBlue)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                                
+                                NavigationLink{
+                                    CanvasView()
+                                } label: {
+                                    VStack {
+                                        Image(systemName: "paintbrush")
+                                            .font(.system(size: 60))
+                                        Text(draw)
+                                            .font(.system(size: 25))
+                                    }
+                                }
+                                .frame(width: 150, height: 150 )
+                                .background(Color.bbBabyBlue)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                            }
+                            
+                            HStack {
+                                NavigationLink{
+                                    StoryUI()
+                                } label: {
+                                    VStack {
+                                        Image(systemName: "books.vertical")
+                                            .font(.system(size: 60))
+                                        Text(story)
+                                            .font(.system(size: 25))
+                                    }
+                                }
+                                .frame(width: 150, height: 150 )
+                                .background(Color.bbBabyBlue)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                                
+                                NavigationLink{
+                                    MathGameView()
+                                } label: {
+                                    VStack {
+                                        Image(systemName: "plus.forwardslash.minus")
+                                            .font(.system(size: 60))
+                                        Text(math)
+                                            .font(.system(size: 25))
+                                    }
+                                }
+                                .frame(width: 150, height: 150 )
+                                .background(Color.bbBabyBlue)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                            }
+                        }
+                        
+                    })
+        }
+    }
+    
     
     
     
