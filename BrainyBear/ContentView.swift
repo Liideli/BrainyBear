@@ -105,7 +105,7 @@ struct ContentView: View {
                                 .cornerRadius(10)
                                 
                                 NavigationLink{
-                                    PlaygroundView()
+                                    CanvasView()
                                 } label: {
                                     VStack {
                                         Image(systemName: "paintbrush")
