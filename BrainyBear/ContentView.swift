@@ -16,45 +16,46 @@ struct ContentView: View {
                 .ignoresSafeArea()
                 .overlay(
                     VStack {
-                        HStack {
-                            NavigationLink {
-                                InfoView()
-                            } label: {
-                                Image(systemName: "info.circle")
-                                    .padding()
-                                    .font(.system(size: 25))
-                                    .background(Color.bbLilac, in: Capsule())
-                                    .foregroundColor(.bbBlack)
-                                    .padding()
-                            }
-                            Spacer()
+                        Group {
                             HStack {
-                                Text("💰 \(mathGame.currentUser.getCoins())")
-                                    .foregroundColor(Color.bbBlack)
-                                    .padding()
-                                    .background(Color.bbLilac, in: Capsule())
-                                    .shadow(radius: 5)
-                                    .font(.custom("Verdana", fixedSize: 25))
-                                    .padding()
-                            }
-                            Spacer()
-                            NavigationLink {
-                                MathGameView()
-                            } label: {
-                                Image(systemName: "gearshape.fill")
-                                    .padding()
-                                    .font(.system(size: 25))
-                                    .background(Color.bbLilac, in: Capsule())
-                                    .foregroundColor(.bbBlack)
-                                    .padding()
+                                NavigationLink {
+                                    InfoView()
+                                } label: {
+                                    Image(systemName: "info.circle")
+                                        .padding()
+                                        .font(.system(size: 25))
+                                        .background(Color.bbLilac, in: Capsule())
+                                        .foregroundColor(.bbBlack)
+                                        .padding()
+                                }
+                                Spacer()
+                                HStack {
+                                    Text("💰 \(mathGame.currentUser.getCoins())")
+                                        .foregroundColor(Color.bbBlack)
+                                        .padding()
+                                        .background(Color.bbLilac, in: Capsule())
+                                        .shadow(radius: 5)
+                                        .font(.custom("Verdana", fixedSize: 25))
+                                }
+                                Spacer()
+                                NavigationLink {
+                                    MathGameView()
+                                } label: {
+                                    Image(systemName: "gearshape.fill")
+                                        .padding()
+                                        .font(.system(size: 25))
+                                        .background(Color.bbLilac, in: Capsule())
+                                        .foregroundColor(.bbBlack)
+                                        .padding()
+                                }
                             }
                         }
-                        Spacer()
+                        .padding(.bottom, -20)
                         VStack{
                             SceneView(scene: SCNScene(named: "Brian.usdc"), options: [.autoenablesDefaultLighting,.allowsCameraControl])
                                 .padding()
                                 .shadow(radius: 15)
-                            HStack {
+                            HStack (spacing: 150){
                                 NavigationLink {
                                     AugmentedRealityView()
                                 } label: {
