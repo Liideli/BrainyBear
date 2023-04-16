@@ -10,7 +10,7 @@
 "info" = "Info";
 "settings" = "Settings";
 "AR" = "AR";
-"playground" = "Playground";
+"map" = "Map";
 "story" = "Story";
 "draw" = "Draw";
 "math" = "Math";
@@ -27,3 +27,27 @@
 "story2" = "Once upon a time, in a forest, there lived a slow and steady tortoise and a fast and overconfident hare. The hare would always boast about his speed and make fun of the tortoise for being slow. One day, the hare challenged the tortoise to a race. The tortoise accepted the challenge, and the race was fixed for the next day. On the day of the race, the hare ran ahead of the tortoise and decided to take a nap in the middle of the race, thinking that he could easily catch up with the tortoise later. Meanwhile, the tortoise continued to walk slowly but steadily towards the finish line. When the hare woke up, he was shocked to see the tortoise just a few steps away from the finish line. The hare ran as fast as he could, but it was too late. The tortoise had already crossed the finish line and won the race. The hare was ashamed of his overconfidence and apologized to the tortoise for making fun of him. From that day on, the hare learned to respect the tortoise and never boasted about his speed again. Moral of the story: Slow and steady wins the race.";
 "title3" = "Little Red Riding Hood";
 "story3" = "Once upon a time, there was a little girl called Little Red Riding Hood. She always wore a red hooded cloak that her grandmother had made for her, and because of this, everyone in the village called her Little Red Riding Hood. One day, Little Red Riding Hood's mother asked her to take some food to her sick grandmother, who lived in a cottage in the forest. Little Red Riding Hood happily agreed and set off on her journey through the forest. As she was walking, a sly wolf saw her and decided to follow her. He wanted to eat both Little Red Riding Hood and her grandmother. So, he quickly ran ahead and reached the grandmother's cottage before Little Red Riding Hood. When the wolf reached the cottage, he knocked on the door, pretending to be Little Red Riding Hood. The grandmother, who was in bed, thought it was her granddaughter and told the wolf to come in. The wolf then ate the grandmother and hid in her bed. A little while later, Little Red Riding Hood reached the cottage. She went in and found the wolf in her grandmother's bed. The wolf tried to eat Little Red Riding Hood too, but she was quick and managed to escape. She ran to a nearby woodcutter and told him about what had happened. The woodcutter quickly went to the cottage and saved Little Red Riding Hood and her grandmother by killing the wolf. From that day on, Little Red Riding Hood never wandered alone in the forest again, and the woodcutter became her protector. Moral of the story: Be careful of strangers, and always stay on the path that you know is safe.";
+
+
+// CanvasView strings
+"colorPick" = "Color";
+"pencil" = "Pencil";
+"pen" = "Pen";
+"marker" = "Marker";
+"pickColor" = "Pick Color";
+
+
+// InfoView strings
+"about" = "About BrainyBear";
+"aboutText" = "Brainy Bear is an application for children and parents to make learning easy and engaging. The application is to be used under parental supervision. Application permissions required.";
+"features" = "Features";
+"mapInstructions" = "Press on map button to view nearby playgrounds";
+"mapRequirements" = "Requires location permissions. Never locate to playground without parental permission/supervision";
+"drawing" = "Drawing";
+"drawInstructions" = "Draw and save images with built in tools";
+"stroies" = "Stories";
+"storiesInstructions" = "Read or listen to multiple stories";
+"mathInstructions" = "Learn math with random generated questions and earn coins";
+"ARView" = "Augmented Reality View";
+"ARViewInstructions" = "View the virtual buddy Brainy Bear in alternative reality";
+"ARViewRequirements" = "Requires camera permission";

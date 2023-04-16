@@ -22,6 +22,13 @@ struct CanvasView_Previews: PreviewProvider {
 }
 
 struct Home: View {
+    // Localized string key
+    let draw:LocalizedStringKey = "draw"
+    let colorPick:LocalizedStringKey = "colorPick"
+    let pencil:LocalizedStringKey = "pencil"
+    let pen:LocalizedStringKey = "pen"
+    let marker:LocalizedStringKey = "marker"
+    let pickColor:LocalizedStringKey = "pickColor"
     
     @State var canvas = PKCanvasView()
     @State var isdraw = true
@@ -38,7 +45,7 @@ struct Home: View {
             // Drawing View......
             
             DrawingView(canvas: $canvas, isdraw: $isdraw, type: $type, color: $color)
-                .navigationTitle("Canvas")
+                .navigationTitle(draw)
                 .font(.system(size: 35))
                 .navigationBarTitleDisplayMode(.inline)
                 .foregroundColor(Color.purple)
@@ -81,7 +88,7 @@ struct Home: View {
                             }) {
                                 Label {
                                     
-                                    Text("Color")
+                                    Text(colorPick)
                                 } icon: {
                                     
                                     Image(systemName: "eyedropper.full")
@@ -103,7 +110,7 @@ struct Home: View {
                             
                             Label {
                                 
-                                Text("Pencil")
+                                Text(pencil)
                             } icon: {
                                 
                                 Image(systemName: "pencil")
@@ -118,7 +125,7 @@ struct Home: View {
                             
                             Label {
                                 
-                                Text("Pen")
+                                Text(pen)
                             } icon: {
                                 
                                 Image(systemName: "pencil.tip")
@@ -132,7 +139,7 @@ struct Home: View {
                             
                             Label {
                                 
-                                Text("Marker")
+                                Text(marker)
                             } icon: {
                                 
                                 Image(systemName: "highlighter")
@@ -152,7 +159,7 @@ struct Home: View {
                 })
                 .sheet(isPresented: $colorPicker) {
                     
-                   ColorPicker("Pick Color", selection: $color)
+                   ColorPicker(pickColor, selection: $color)
                     .padding()
                 }
             

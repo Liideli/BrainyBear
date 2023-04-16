@@ -10,7 +10,7 @@
 "info" = "Info";
 "settings" = "Asetukset";
 "AR" = "AR";
-"playground" = "Leikkikentät";
+"map" = "Kartta";
 "story" = "Tarina";
 "draw" = "Piirrä";
 "math" = "Matikka";
@@ -27,3 +27,27 @@
 "story2" = "Olipa kerran metsässä hidas ja vakaa kilpikonna ja nopea ja liian itsevarma jänis. Jänis kerskui aina nopeudestaan ja pilkkasi kilpikonnaa hitaasta. Eräänä päivänä jänis haastoi kilpikonnan kilpailuun. Kilpikonna otti haasteen vastaan ja kilpailu sovittiin seuraavaksi päiväksi. Kisapäivänä jänis juoksi kilpikonnan edellä ja päätti ottaa torkut kesken kilpailun, koska hän ajatteli, että hän voisi helposti saada kilpikonnan myöhemmin kiinni. Samaan aikaan kilpikonna jatkoi kävelemistä hitaasti mutta tasaisesti kohti maaliviivaa. Kun jänis heräsi, hän oli järkyttynyt nähdessään kilpikonnan vain muutaman askeleen päässä maaliviivasta. Jänis juoksi niin nopeasti kuin pystyi, mutta oli liian myöhäistä. Kilpikonna oli jo ylittänyt maaliviivan ja voitti kilpailun. Jänis häpeäsi liiallista itseluottamustaan ja pyysi kilpikonnalta anteeksi, että tämä pilkkasi häntä. Siitä päivästä lähtien jänis oppi kunnioittamaan kilpikonnaa eikä enää koskaan kerskaillut nopeudestaan. Tarinan moraali: Hidas ja vakaa voittaa kilpailun.";
 "title3" = "Pieni Punahilkka";
 "story3" = "Olipa kerran pieni tyttö nimeltä Punahilkka. Hän käytti aina punahuppuista viittaa, jonka hänen isoäitinsä oli valmistanut hänelle, ja tämän vuoksi kaikki kylässä kutsuivat häntä Punahilkkaiseksi. Eräänä päivänä Punahilkan äiti pyysi häntä viemään ruokaa sairaalle isoäidilleen, joka asui metsämökissä. Punahilkka suostui iloisesti ja lähti matkalleen metsän halki. Kun hän käveli, viekas susi näki hänet ja päätti seurata häntä. Hän halusi syödä sekä Punahilkka että hänen isoäitinsä. Joten hän juoksi nopeasti eteenpäin ja saavutti isoäidin mökin ennen Punahilkkaa. Kun susi saapui mökille, hän koputti oveen teeskennellen olevansa Punahilkka. Sängyssä ollut isoäiti luuli sen olevan hänen tyttärentytäränsä ja käski suden tulla sisään. Sitten susi söi isoäidin ja piiloutui tämän sänkyyn. Vähän myöhemmin Punahilkka saapui mökille. Hän meni sisään ja löysi suden isoäitinsä sängystä. Susi yritti myös syödä Punahilkkaa, mutta hän oli nopea ja onnistui pakenemaan. Hän juoksi läheisen puunhakkurin luo ja kertoi hänelle tapahtuneesta. Puunhakkaaja meni nopeasti mökille ja pelasti Punahilkan ja hänen isoäitinsä tappamalla suden. Siitä päivästä lähtien Punahilkka ei enää koskaan vaeltanut yksin metsässä, ja puunhakkaajasta tuli hänen suojelijansa. Tarinan moraali: Ole varovainen vieraita kohtaan ja pysy aina tiellä, jonka tiedät olevan turvallinen.";
+
+
+// CanvasView strings
+"colorPick" = "Väri";
+"pencil" = "Lyijykynä";
+"pen" = "Kynä";
+"marker" = "Tussi";
+"pickColor" = "Valitse Väri";
+
+
+// InfoView strings
+"about" = "Tietoa BrainyBearista";
+"aboutText" = "Brainy Bear on lapsille ja vanhemmille tarkoitettu sovellus, joka tekee oppimisesta helppoa ja kiinnostavaa. Sovellusta tulee käyttää vanhempien valvonnassa. Sovelluksen käyttöön vaaditaan käyttöoikeudet.";
+"features" = "Ominaisuudet";
+"mapInstructions" = "Paina karttapainiketta nähdäksesi lähellä olevat leikkikentät";
+"mapRequirements" = "Vaatii sijaintiluvat. Älä koskaan mene leikkikentälle ilman vanhempien lupaa tai valvontaa";
+"drawing" = "Piirtäminen";
+"drawInstructions" = "Piirrä ja tallenna kuvia sisäänrakennetuilla työkaluilla";
+"stroies" = "Tarinat";
+"storiesInstructions" = "Lue tai kuuntele useita tarinoita";
+"mathInstructions" = "Opi matematiikkaa satunnaisten kysymysten avulla ja ansaitse kolikoita";
+"ARView" = "Vaihtoehtoisen todellisuuden näkymä";
+"ARViewInstructions" = "Katso virtuaalista ystävää Brainy Bearia vaihtoehtoisessa todellisuudessa";
+"ARViewRequirements" = "Vaatii luvan kameran käyttöön";

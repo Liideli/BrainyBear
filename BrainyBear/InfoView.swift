@@ -8,6 +8,22 @@
 import SwiftUI
 
 struct InfoView: View {
+    // Localized string keys
+    let about:LocalizedStringKey = "about"
+    let aboutText:LocalizedStringKey = "aboutText"
+    let features:LocalizedStringKey = "features"
+    let map:LocalizedStringKey = "map"
+    let mapInstructions:LocalizedStringKey = "mapInstructions"
+    let mapRequirements:LocalizedStringKey = "mapRequirements"
+    let drawing:LocalizedStringKey = "drawing"
+    let drawInstructions:LocalizedStringKey = "drawInstructions"
+    let stories:LocalizedStringKey = "stories"
+    let storiesInstructions:LocalizedStringKey = "storiesInstructions"
+    let math:LocalizedStringKey = "math"
+    let mathInstructions:LocalizedStringKey = "mathInstructions"
+    let ARView:LocalizedStringKey = "ARView"
+    let ARViewInstructions:LocalizedStringKey = "ARViewInstructions"
+    let ARViewRequirements:LocalizedStringKey = "ARViewRequirements"
     var body: some View {
         Color.bbLightBrown
             .ignoresSafeArea()
@@ -20,34 +36,34 @@ struct InfoView: View {
                                 .font(.system(size: 80))
                                 .foregroundColor(.bbBlack)
                                 .cornerRadius(40)
-                            Text("About brainybear")
+                            Text(about)
                                 .font(
                                     .title
                                         .weight(.heavy))
                                 .padding()
                         }
                         Group {
-                            Text("Brainy Bear is an application for children and parents to make learning easy and engaging. The application is to be used under parental supervision. Application permissions required.")
+                            Text(aboutText)
                                 .padding()
                             Divider()
-                            Text("Features")
+                            Text(features)
                                 .font(.title)
                                 .bold()
                             HStack{
                                 Image(systemName: "map")
                                     .font(.system(size: 40))
                                     .padding()
-                                Text("Map")
+                                Text(map)
                                     .font(.system(size: 25))
                                 Spacer()
                             }
                         }
                         Group {
                             HStack{
-                                Text("Press on main view to view nearby playgrounds")
+                                Text(mapInstructions)
                                     .padding()
                                 Divider()
-                                Text("Requires location permissions. Never locate to playground without parental permission/supervision")
+                                Text(mapRequirements)
                                     .italic()
                                     .bold()
                                     .padding()
@@ -58,12 +74,12 @@ struct InfoView: View {
                                 Image(systemName: "paintbrush")
                                     .font(.system(size: 40))
                                     .padding()
-                                Text("Drawing")
+                                Text(drawing)
                                     .font(.system(size: 25))
                                 Spacer()
                             }
                             HStack{
-                                Text("Draw and save images with built in tools")
+                                Text(drawInstructions)
                             }
                         }
                         Group {
@@ -71,12 +87,12 @@ struct InfoView: View {
                              Image(systemName: "books.vertical")
                              .font(.system(size: 40))
                              .padding()
-                             Text("Stories")
+                             Text(stories)
                              .font(.system(size: 25))
                              Spacer()
                              }
                              HStack{
-                             Text("Read or listen to multiple stories")
+                             Text(storiesInstructions)
                              }
                         }
                         Group {
@@ -84,12 +100,12 @@ struct InfoView: View {
                              Image(systemName: "plus.forwardslash.minus")
                              .font(.system(size: 40))
                              .padding()
-                             Text("Math")
+                             Text(math)
                              .font(.system(size: 25))
                              Spacer()
                              }
                              HStack{
-                             Text("Learn math with random generated questions and earn coins")
+                             Text(mathInstructions)
                              }
                         }
                         Group {
@@ -97,15 +113,15 @@ struct InfoView: View {
                              Image(systemName: "camera.viewfinder")
                              .font(.system(size: 40))
                              .padding()
-                             Text("Alternate reality view")
+                             Text(ARView)
                              .font(.system(size: 25))
                              Spacer()
                              }
                             HStack{
-                                Text("View the virtual buddy Brainy Bear in alternative reality")
+                                Text(ARViewInstructions)
                                     .padding()
                                 Divider()
-                                Text("Requires camera permission")
+                                Text(ARViewRequirements)
                                     .italic()
                                     .bold()
                                     .padding()

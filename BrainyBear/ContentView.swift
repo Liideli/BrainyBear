@@ -9,11 +9,8 @@ import SwiftUI
 import SceneKit
 
 struct ContentView: View {
-    @State var progress = 0.7
-    let info:LocalizedStringKey = "info"
-    let settings:LocalizedStringKey = "settings"
-    let AR:LocalizedStringKey = "AR"
-    let playground:LocalizedStringKey = "playground"
+    // Localized string keys
+    let map:LocalizedStringKey = "map"
     let draw:LocalizedStringKey = "draw"
     let story:LocalizedStringKey = "story"
     let math:LocalizedStringKey = "math"
@@ -95,7 +92,7 @@ struct ContentView: View {
                                     VStack {
                                         Image(systemName: "map")
                                             .font(.system(size: 60))
-                                        Text("Map")
+                                        Text(map)
                                             .font(.system(size: 25))
                                     }
                                 }
@@ -110,7 +107,7 @@ struct ContentView: View {
                                     VStack {
                                         Image(systemName: "paintbrush")
                                             .font(.system(size: 60))
-                                        Text("Draw")
+                                        Text(draw)
                                             .font(.system(size: 25))
                                     }
                                 }
@@ -127,7 +124,7 @@ struct ContentView: View {
                                     VStack {
                                         Image(systemName: "books.vertical")
                                             .font(.system(size: 60))
-                                        Text("Story")
+                                        Text(story)
                                             .font(.system(size: 25))
                                     }
                                 }
@@ -142,7 +139,7 @@ struct ContentView: View {
                                     VStack {
                                         Image(systemName: "plus.forwardslash.minus")
                                             .font(.system(size: 60))
-                                        Text("Math")
+                                        Text(math)
                                             .font(.system(size: 25))
                                     }
                                 }
