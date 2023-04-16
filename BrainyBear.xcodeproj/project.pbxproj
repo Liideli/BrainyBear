@@ -12,7 +12,6 @@
 		6A3D4F5F29D99B2C004DBAA0 /* MathGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D4F5E29D99B2C004DBAA0 /* MathGameView.swift */; };
 		6A3D4F6129DDBCB8004DBAA0 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D4F6029DDBCB8004DBAA0 /* UserData.swift */; };
 		6A3D4F6329DDBD39004DBAA0 /* MathGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D4F6229DDBD39004DBAA0 /* MathGameViewModel.swift */; };
-		6A607E2229E2C34500296FF9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6A607E2129E2C34500296FF9 /* .gitignore */; };
 		6A7CEA7529EB164D0005EDFD /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7CEA7429EB164D0005EDFD /* InfoView.swift */; };
 		6A7CEA7E29EB41BA0005EDFD /* Brian.usdc in Resources */ = {isa = PBXBuildFile; fileRef = 6A7CEA7D29EB41BA0005EDFD /* Brian.usdc */; };
 		6ACF9D7529DD919800C17FDB /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ACF9D7429DD919800C17FDB /* locations.json */; };
@@ -60,7 +59,6 @@
 		6A3D4F5E29D99B2C004DBAA0 /* MathGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathGameView.swift; sourceTree = "<group>"; };
 		6A3D4F6029DDBCB8004DBAA0 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		6A3D4F6229DDBD39004DBAA0 /* MathGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathGameViewModel.swift; sourceTree = "<group>"; };
-		6A607E2129E2C34500296FF9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		6A7CEA7429EB164D0005EDFD /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		6A7CEA7D29EB41BA0005EDFD /* Brian.usdc */ = {isa = PBXFileReference; lastKnownFileType = file; name = Brian.usdc; path = BrainyBear/Brian.usdc; sourceTree = "<group>"; };
 		6A7CEA7F29EB43090005EDFD /* Brian.usdc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brian.usdc; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 				6AD30AD829D711730089F1CC /* LocationManager.swift */,
 				6A0BF65529DAF39800AA20D8 /* Model.swift */,
 				6ACF9D7429DD919800C17FDB /* locations.json */,
-				6A607E2129E2C34500296FF9 /* .gitignore */,
 				6A3D4F5E29D99B2C004DBAA0 /* MathGameView.swift */,
 				6A3D4F6029DDBCB8004DBAA0 /* UserData.swift */,
 				6A3D4F6229DDBD39004DBAA0 /* MathGameViewModel.swift */,
@@ -310,7 +307,6 @@
 			files = (
 				F43673E429E9EC7C005E0E76 /* Localizable.strings in Resources */,
 				6A7CEA7E29EB41BA0005EDFD /* Brian.usdc in Resources */,
-				6A607E2229E2C34500296FF9 /* .gitignore in Resources */,
 				CD445CDF29E1CEE20069A787 /* stories.json in Resources */,
 				F41D654629D4398900FE6CA6 /* Preview Assets.xcassets in Resources */,
 				F41D654329D4398900FE6CA6 /* Assets.xcassets in Resources */,
