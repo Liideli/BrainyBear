@@ -14,7 +14,7 @@ struct ContentView: View {
     let draw:LocalizedStringKey = "draw"
     let story:LocalizedStringKey = "story"
     let math:LocalizedStringKey = "math"
-
+    
     @ObservedObject var mathGame = MathGameViewModel()
     var body: some View {
         NavigationView {
@@ -45,7 +45,7 @@ struct ContentView: View {
                                 }
                                 Spacer()
                                 NavigationLink {
-                                    MathGameView()
+                                    SettingsView(currentLanguage: "en")
                                 } label: {
                                     Image(systemName: "gearshape.fill")
                                         .padding()
@@ -153,8 +153,6 @@ struct ContentView: View {
                     })
         }
     }
-    
-    
     
     
     struct ContentView_Previews: PreviewProvider {

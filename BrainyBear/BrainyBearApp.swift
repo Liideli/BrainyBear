@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct BrainyBearApp: App {
+    @StateObject var languageSettings = LanguageSettings(initialLanguage: "en") // Create an instance of LanguageSettings as an ObservableObject
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(languageSettings)
         }
     }
 }
