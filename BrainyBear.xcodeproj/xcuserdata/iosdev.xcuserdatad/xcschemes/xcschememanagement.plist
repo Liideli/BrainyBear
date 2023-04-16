@@ -10,6 +10,7 @@
 			<integer>0</integer>
 		</dict>
 	</dict>
+<<<<<<< HEAD
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>F41D653A29D4398800FE6CA6</key>
@@ -28,5 +29,7 @@
 			<true/>
 		</dict>
 	</dict>
+=======
+>>>>>>> game-screen
 </dict>
 </plist>

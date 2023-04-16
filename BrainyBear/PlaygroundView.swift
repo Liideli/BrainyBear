@@ -44,7 +44,7 @@ struct PlaygroundView: View {
                         VStack {
                             Text(model.name.en ?? model.name.fi)
                         }
-                    }
+                    }   
                 }
             }
         }

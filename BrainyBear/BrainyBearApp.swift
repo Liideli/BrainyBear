@@ -11,8 +11,7 @@ import SwiftUI
 struct BrainyBearApp: App {
     var body: some Scene {
         WindowGroup {
-            //ContentView()
-            PlaygroundView()
+            ContentView()
         }
     }
 }
