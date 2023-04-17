@@ -8,7 +8,6 @@
 import SwiftUI
 import RealityKit
 
-
 struct AugmentedRealityView : View {
     var body: some View {
         ARViewContainer().edgesIgnoringSafeArea(.all)
@@ -33,7 +32,7 @@ struct ARViewContainer: UIViewRepresentable {
         return arView
         
     }
-    
+        
     func updateUIView(_ uiView: ARView, context: Context) {}
     
 }
