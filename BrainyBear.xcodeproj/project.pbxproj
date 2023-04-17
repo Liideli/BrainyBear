@@ -34,8 +34,9 @@
 		F41D655C29D4398900FE6CA6 /* BrainyBearUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D655B29D4398900FE6CA6 /* BrainyBearUITestsLaunchTests.swift */; };
 		F43673E429E9EC7C005E0E76 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F43673E629E9EC7C005E0E76 /* Localizable.strings */; };
 		F43673EB29EC06D8005E0E76 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43673EA29EC06D8005E0E76 /* SettingsView.swift */; };
+		F436749529ED5D08005E0E76 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = F436749429ED5D08005E0E76 /* Experience.rcproject */; };
 		F464A1D329DA17FC00DA0F68 /* AugmentedRealityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F464A1D229DA17FC00DA0F68 /* AugmentedRealityView.swift */; };
-		F464A1D529DA19B400DA0F68 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = F464A1D429DA19B400DA0F68 /* Experience.rcproject */; };
+		F464A1D529DA19B400DA0F68 /* Brian.usdc in Sources */ = {isa = PBXBuildFile; fileRef = F464A1D429DA19B400DA0F68 /* Brian.usdc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,8 +90,9 @@
 		F43673E529E9EC7C005E0E76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F43673E729E9EC91005E0E76 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F43673EA29EC06D8005E0E76 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F436749429ED5D08005E0E76 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		F464A1D229DA17FC00DA0F68 /* AugmentedRealityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedRealityView.swift; sourceTree = "<group>"; };
-		F464A1D429DA19B400DA0F68 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
+		F464A1D429DA19B400DA0F68 /* Brian.usdc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brian.usdc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,10 +155,11 @@
 			isa = PBXGroup;
 			children = (
 				F43673EA29EC06D8005E0E76 /* SettingsView.swift */,
+				F436749429ED5D08005E0E76 /* Experience.rcproject */,
 				6AD0BB2F29E99E4E00C6936C /* Drawing */,
 				6A7CEA7F29EB43090005EDFD /* Brian.usdc */,
 				6ACF9D7329DD8D9400C17FDB /* Info.plist */,
-				F464A1D429DA19B400DA0F68 /* Experience.rcproject */,
+				F464A1D429DA19B400DA0F68 /* Brian.usdc */,
 				F41D653E29D4398800FE6CA6 /* BrainyBearApp.swift */,
 				F41D654029D4398800FE6CA6 /* ContentView.swift */,
 				F43673E629E9EC7C005E0E76 /* Localizable.strings */,
@@ -343,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AD0BB3A29E9A5EC00C6936C /* DrawingView.swift in Sources */,
+				F436749529ED5D08005E0E76 /* Experience.rcproject in Sources */,
 				6A0BF65629DAF39800AA20D8 /* Model.swift in Sources */,
 				6AD0BB3129E99E8000C6936C /* AddNewCanvasViiew.swift in Sources */,
 				6AD0BB3829E9A4D400C6936C /* CanvasView.swift in Sources */,
@@ -350,7 +354,7 @@
 				6AD30AD529D7081B0089F1CC /* PlaygroundView.swift in Sources */,
 				6AD30AD929D711740089F1CC /* LocationManager.swift in Sources */,
 				F41D653F29D4398800FE6CA6 /* BrainyBearApp.swift in Sources */,
-				F464A1D529DA19B400DA0F68 /* Experience.rcproject in Sources */,
+				F464A1D529DA19B400DA0F68 /* Brian.usdc in Sources */,
 				6AD0BB3629E9A1EF00C6936C /* Model.xcdatamodeld in Sources */,
 				6A7CEA7529EB164D0005EDFD /* InfoView.swift in Sources */,
 				F464A1D329DA17FC00DA0F68 /* AugmentedRealityView.swift in Sources */,
