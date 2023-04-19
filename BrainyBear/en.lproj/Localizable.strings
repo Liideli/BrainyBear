@@ -51,3 +51,6 @@
 "ARView" = "Augmented Reality View";
 "ARViewInstructions" = "View the virtual buddy Brainy Bear in alternative reality";
 "ARViewRequirements" = "Requires camera permission";
+
+// SettingsView strings
+"settings" = "Asetukset";

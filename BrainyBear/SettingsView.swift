@@ -9,36 +9,50 @@ import SwiftUI
 import Foundation
 
 struct SettingsView: View {
+    // Localized string keys
+    let settings:LocalizedStringKey = "settings"
+    
     @EnvironmentObject var languageSettings: LanguageSettings
     @State var currentLanguage: String // Use @State to track the current language
+    @State private var appState = 0
 
     var body: some View {
-        VStack {
+        ZStack {
             Color.bbLightBrown
-            Text("Current Language: \(languageSettings.currentLanguage)")
-                .padding()
-
-            Button(action: {
-                languageSettings.setLanguage("en")
-            }) {
-                Text("English")
+                .ignoresSafeArea()
+            VStack {
+                Text(settings)
+                    .font(
+                        .title
+                            .weight(.heavy))
                     .padding()
-            }.background(Color.bbBabyBlue)
+                Text("Current Language: \(languageSettings.currentLanguage)")
+                    .padding()
+                
+                Button(action: {
+                    languageSettings.setLanguage("en")
+                }) {
+                    Text("English")
+                        .padding()
+                }
+                .background(Color.bbBabyBlue)
                 .foregroundColor(.white)
                 .cornerRadius(10)
-
-            Button(action: {
-                languageSettings.setLanguage("fi")
-            }) {
-                Text("Finnish")
-                    .padding()
-            }.background(Color.bbBabyBlue)
+                
+                Button(action: {
+                    languageSettings.setLanguage("fi")
+                }) {
+                    Text("Finnish")
+                        .padding()
+                }
+                .background(Color.bbBabyBlue)
                 .foregroundColor(.white)
                 .cornerRadius(10)
+            }
+            .onReceive(languageSettings.$currentLanguage, perform: { language in
+                currentLanguage = languageSettings.currentLanguage
+            })
         }
-        .onReceive(languageSettings.$currentLanguage, perform: { language in
-            currentLanguage = languageSettings.currentLanguage
-        })
     }
 }
 
