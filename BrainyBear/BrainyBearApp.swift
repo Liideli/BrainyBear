@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import CoreData
 
 @main
 struct BrainyBearApp: App {
+    let coinsManager = CoinsManager(context: NSManagedObjectContext)
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(coinsManager)
         }
     }
 }

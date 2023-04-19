@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct MathGameView: View {
 
     @ObservedObject var mathGame = MathGameViewModel()
+    @EnvironmentObject private var coinsManager: CoinsManager
+    @State private var coins: Int?
     
     var body: some View {
         Color.bbLightBrown
@@ -18,7 +21,10 @@ struct MathGameView: View {
         VStack{
             HStack {
                 Spacer()
-                Text("💰 \(mathGame.currentUser.getCoins())")
+                Text("💰 \(coins ?? 0)")
+                    .onAppear(perform: {
+                        coins = coinsManager.getCoins()
+                    })
                     .foregroundColor(Color.bbBlack)
                     .padding()
                     .background(Color.bbLilac, in: Capsule())
@@ -40,7 +46,7 @@ struct MathGameView: View {
             HStack {
                 Button(action: {
                     if (mathGame.makeGuess(guess: mathGame.shuffledAnswers[0])) {
-                        print("Answer correct!")
+                        print("Answer correct! \(coins ?? 0)")
                     } else {
                         print("Answer incorrect!!")
                     }
@@ -55,7 +61,9 @@ struct MathGameView: View {
                 }
                 Button(action: {
                     if (mathGame.makeGuess(guess: mathGame.shuffledAnswers[1])) {
-                        print("Answer correct!")
+                        coins = (coins ?? 0) + 10
+                        coinsManager.saveCoins(coins!)
+                        print("Answer correct! \(coins ?? 0)")
                     } else {
                         print("Answer incorrect!!")
                     }}) {
@@ -71,7 +79,9 @@ struct MathGameView: View {
             HStack {
                 Button(action: {
                     if (mathGame.makeGuess(guess: mathGame.shuffledAnswers[2])) {
-                        print("Answer correct!")
+                        coins = (coins ?? 0) + 10
+                        coinsManager.saveCoins(coins!)
+                        print("Answer correct! \(coins ?? 0)")
                     } else {
                         print("Answer incorrect!!")
                     }
@@ -86,7 +96,9 @@ struct MathGameView: View {
                 }
                 Button(action: {
                     if (mathGame.makeGuess(guess: mathGame.shuffledAnswers[3])) {
-                        print("Answer correct!")
+                        coins = (coins ?? 0) + 10
+                        coinsManager.saveCoins(coins!)
+                        print("Answer correct! \(coins ?? 0)")
                     } else {
                         print("Answer incorrect!!")
                     }
@@ -104,8 +116,10 @@ struct MathGameView: View {
     }
 }
 
+/*
 struct MathGameView_Previews: PreviewProvider {
     static var previews: some View {
         MathGameView()
     }
 }
+*/

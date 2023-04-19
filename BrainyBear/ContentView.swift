@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SceneKit
+import CoreData
 
 struct ContentView: View {
     // Localized string keys
@@ -14,8 +15,14 @@ struct ContentView: View {
     let draw:LocalizedStringKey = "draw"
     let story:LocalizedStringKey = "story"
     let math:LocalizedStringKey = "math"
+    
+    @Environment(\.managedObjectContext) private var managedObjectContext
+    
+    // Initialize the coins manager    
+    @EnvironmentObject private var coinsManager: CoinsManager
+    
+    @State private var coins: Int?
 
-    @ObservedObject var mathGame = MathGameViewModel()
     var body: some View {
         NavigationView {
             Color.bbLightBrown
@@ -36,7 +43,10 @@ struct ContentView: View {
                                 }
                                 Spacer()
                                 HStack {
-                                    Text("💰 \(mathGame.currentUser.getCoins())")
+                                    Text("💰 \(coins ?? 0)")
+                                        .onAppear(perform: {
+                                            coins = coinsManager.getCoins()
+                                        })
                                         .foregroundColor(Color.bbBlack)
                                         .padding()
                                         .background(Color.bbLilac, in: Capsule())
@@ -44,16 +54,15 @@ struct ContentView: View {
                                         .font(.custom("Verdana", fixedSize: 25))
                                 }
                                 Spacer()
-                                NavigationLink {
-                                    MathGameView()
-                                } label: {
-                                    Image(systemName: "gearshape.fill")
-                                        .padding()
-                                        .font(.system(size: 25))
-                                        .background(Color.bbLilac, in: Capsule())
-                                        .foregroundColor(.bbBlack)
-                                        .padding()
-                                }
+                                NavigationLink("score", destination: MathGameView())
+                            label: do {
+                                Image(systemName: "gearshape.fill")
+                                    .padding()
+                                    .font(.system(size: 25))
+                                    .background(Color.bbLilac, in: Capsule())
+                                    .foregroundColor(.bbBlack)
+                                    .padding()
+                            }
                             }
                         }
                         .padding(.bottom, -20)
@@ -133,25 +142,26 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                                 .cornerRadius(10)
                                 
-                                NavigationLink{
+                                NavigationLink ("score"){
                                     MathGameView()
-                                } label: {
-                                    VStack {
-                                        Image(systemName: "plus.forwardslash.minus")
-                                            .font(.system(size: 60))
-                                        Text(math)
-                                            .font(.system(size: 25))
-                                    }
                                 }
-                                .frame(width: 150, height: 150 )
-                                .background(Color.bbBabyBlue)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
+                            label: do {
+                                VStack {
+                                    Image(systemName: "plus.forwardslash.minus")
+                                        .font(.system(size: 60))
+                                    Text(math)
+                                        .font(.system(size: 25))
+                                }
+                            }
+                                /*.frame(width: 150, height: 150 )
+                                 .background(Color.bbBabyBlue)
+                                 .foregroundColor(.white)
+                                 .cornerRadius(10)*/
                             }
                         }
                         
                     })
-        }
+        }.environmentObject(CoinsManager(context: managedObjectContext))
     }
     
     
