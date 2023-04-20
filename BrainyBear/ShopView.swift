@@ -16,15 +16,18 @@ struct Item: Identifiable {
 struct ShopView: View {
     @State private var items = [Item]()
     @State private var showingAddItemView = false
-    
     @State private var coins: Int?
+    @State private var showingConfirmation = false
     
     var body: some View {
         NavigationView {
+            Color.bbLightBrown
+                .ignoresSafeArea()
+                .overlay(
             VStack {
                 HStack {
                     Text("Reward store")
-                        .fontWeight(Font.headline)
+                        .font(.largeTitle)
                         .padding()
                     Spacer()
                     Text("💰 \(coins ?? 0)")
@@ -38,23 +41,39 @@ struct ShopView: View {
                         .font(.custom("Verdana", fixedSize: 25))
                         .padding()
                 }
-                List {
-                    ForEach(items) { item in
-                        ItemRow(item: item) {
-                            deleteItem(item)
+                if items.count > 0 {
+                    List {
+                        ForEach(items) { item in
+                            ItemRow(item: item) {
+                                showingConfirmation = true
+                            }
+                            .confirmationDialog("Buy item", isPresented: $showingConfirmation) {
+                                Button("Buy item") { deleteItem(item) }
+                                Button("Cancel", role: .cancel) { }
+                            } message: {
+                                Text("Do you want to get \(item.name) for \(item.price)")
+                            }
                         }
+                        .deleteDisabled(true)
                     }
-                    .onDelete(perform: deleteItems)
+                } else {
+                    Spacer()
+                    Text("No rewards to buy yet")
+                    Spacer()
                 }
                 Button(action: {
                     showingAddItemView = true
                 }) {
                     Image(systemName: "plus")
+                        .padding()
+                        .background(Color.bbLilac)
+                        .foregroundColor(Color.bbBlack)
+                        .clipShape(Capsule())
                 }
                 .sheet(isPresented: $showingAddItemView) {
                     AddItemView(addItem: addItem)
                 }
-            }
+            })
         }
     }
     
@@ -88,6 +107,7 @@ struct ItemRow: View {
             Spacer()
             Button(action: onDelete) {
                 Image(systemName: "dollarsign.circle")
+                    .font(.system(size: 35))
                     .foregroundColor(.green)
                     .padding()
             }
