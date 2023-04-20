@@ -9,65 +9,59 @@ import Foundation
 import SwiftUI
 import CoreData
 
-/* struct User {
-    @AppStorage("COINS_KEY") var savedCoins = 0
+class DataController : ObservableObject {
     
-    init(savedCoins: Int = 0) {
-        self.savedCoins = savedCoins
-    }
+    // MARK: - Properties
     
-    func modifyCoins() {
-        self.savedCoins += 50
-        print("\(self.savedCoins)")
-    }
+    static let shared = DataController()
     
-    func getCoins () -> Int {
-        return self.savedCoins
-    }
-}
-*/
-
-import CoreData
-
-class CoinsManager : ObservableObject {
-
-    private let context: NSManagedObjectContext
-
-    init(context: NSManagedObjectContext) {
-        self.context = context
-    }
-
-    // Save coins to Core Data
-    func saveCoins(_ coins: Int) {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Coin")
+    private lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "UserData")
+        container.loadPersistentStores(completionHandler: { (_, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
+    
+    private lazy var managedContext: NSManagedObjectContext = {
+        let context = persistentContainer.viewContext
+        return context
+    }()
+    
+    // MARK: - Methods
+    
+    func saveScore(_ coins: Int) {
+        let entity = NSEntityDescription.entity(forEntityName: "Coin", in: managedContext)!
+        let scoreObject = NSManagedObject(entity: entity, insertInto: managedContext)
+        scoreObject.setValue(coins, forKey: "coins")
+        
         do {
-            let results = try context.fetch(request)
-            if let coinsEntity = results.first as? NSManagedObject {
-                coinsEntity.setValue(coins, forKey: "coins")
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save coins. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func fetchScore() -> Int? {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Coin")
+        fetchRequest.fetchLimit = 1
+        
+        do {
+            let results = try managedContext.fetch(fetchRequest) as! [NSManagedObject]
+            if let score = results.first?.value(forKey: "coins") as? Int {
+                return score
             } else {
-                let coinsEntity = NSEntityDescription.insertNewObject(forEntityName: "Coin", into: context)
-                coinsEntity.setValue(coins, forKey: "coins")
+                return nil
             }
-            try context.save()
-        } catch let error {
-            print("Could not save coins. \(error)")
+        } catch let error as NSError {
+            print("Could not fetch coins. \(error), \(error.userInfo)")
+            return nil
         }
-    }
-
-    // Retrieve coins from Core Data
-    func getCoins() -> Int {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Coins")
-        do {
-            let results = try context.fetch(request)
-            if let coinsEntity = results.first as? NSManagedObject {
-                return coinsEntity.value(forKey: "coins") as? Int ?? 0
-            }
-        } catch let error {
-            print("Could not fetch coins. \(error)")
-        }
-        return 0
     }
 }
+
 
 
 

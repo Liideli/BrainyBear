@@ -17,12 +17,9 @@ struct ContentView: View {
     let math:LocalizedStringKey = "math"
     
     @Environment(\.managedObjectContext) private var managedObjectContext
-    
-    // Initialize the coins manager    
-    @EnvironmentObject private var coinsManager: CoinsManager
-    
+        
     @State private var coins: Int?
-
+    
     var body: some View {
         NavigationView {
             Color.bbLightBrown
@@ -45,7 +42,7 @@ struct ContentView: View {
                                 HStack {
                                     Text("💰 \(coins ?? 0)")
                                         .onAppear(perform: {
-                                            coins = coinsManager.getCoins()
+                                            coins = DataController.shared.fetchScore()
                                         })
                                         .foregroundColor(Color.bbBlack)
                                         .padding()
@@ -54,8 +51,10 @@ struct ContentView: View {
                                         .font(.custom("Verdana", fixedSize: 25))
                                 }
                                 Spacer()
-                                NavigationLink("score", destination: MathGameView())
-                            label: do {
+                                NavigationLink{
+                                    MathGameView()
+                                }
+                            label:  {
                                 Image(systemName: "gearshape.fill")
                                     .padding()
                                     .font(.system(size: 25))
@@ -142,10 +141,10 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                                 .cornerRadius(10)
                                 
-                                NavigationLink ("score"){
+                                NavigationLink {
                                     MathGameView()
                                 }
-                            label: do {
+                            label: {
                                 VStack {
                                     Image(systemName: "plus.forwardslash.minus")
                                         .font(.system(size: 60))
@@ -153,15 +152,15 @@ struct ContentView: View {
                                         .font(.system(size: 25))
                                 }
                             }
-                                /*.frame(width: 150, height: 150 )
-                                 .background(Color.bbBabyBlue)
-                                 .foregroundColor(.white)
-                                 .cornerRadius(10)*/
+                            .frame(width: 150, height: 150 )
+                            .background(Color.bbBabyBlue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
                             }
                         }
                         
                     })
-        }.environmentObject(CoinsManager(context: managedObjectContext))
+        }
     }
     
     
