@@ -17,6 +17,7 @@
 		6A7CEA8629EC77940005EDFD /* Brian.usdc in Resources */ = {isa = PBXBuildFile; fileRef = 6A7CEA8529EC77940005EDFD /* Brian.usdc */; };
 		6A7CEA9329F0813D0005EDFD /* UserData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A7CEA9129F0813D0005EDFD /* UserData.xcdatamodeld */; };
 		6A7CEA9529F144A40005EDFD /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7CEA9429F144A40005EDFD /* ShopView.swift */; };
+		6A7CEA9829F15EA10005EDFD /* PasscodeField in Frameworks */ = {isa = PBXBuildFile; productRef = 6A7CEA9729F15EA10005EDFD /* PasscodeField */; };
 		6ACF9D7529DD919800C17FDB /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ACF9D7429DD919800C17FDB /* locations.json */; };
 		6AD0BB3129E99E8000C6936C /* AddNewCanvasViiew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD0BB3029E99E8000C6936C /* AddNewCanvasViiew.swift */; };
 		6AD0BB3629E9A1EF00C6936C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6AD0BB3429E9A1EF00C6936C /* Model.xcdatamodeld */; };
@@ -100,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A7CEA9829F15EA10005EDFD /* PasscodeField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +227,9 @@
 			dependencies = (
 			);
 			name = BrainyBear;
+			packageProductDependencies = (
+				6A7CEA9729F15EA10005EDFD /* PasscodeField */,
+			);
 			productName = BrainyBear;
 			productReference = F41D653B29D4398800FE6CA6 /* BrainyBear.app */;
 			productType = "com.apple.product-type.application";
@@ -298,6 +303,9 @@
 				fi,
 			);
 			mainGroup = F41D653229D4398800FE6CA6;
+			packageReferences = (
+				6A7CEA9629F15EA10005EDFD /* XCRemoteSwiftPackageReference "PasscodeField" */,
+			);
 			productRefGroup = F41D653C29D4398800FE6CA6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -711,6 +719,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6A7CEA9629F15EA10005EDFD /* XCRemoteSwiftPackageReference "PasscodeField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hengyu/PasscodeField.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6A7CEA9729F15EA10005EDFD /* PasscodeField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6A7CEA9629F15EA10005EDFD /* XCRemoteSwiftPackageReference "PasscodeField" */;
+			productName = PasscodeField;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		6A7CEA9129F0813D0005EDFD /* UserData.xcdatamodeld */ = {

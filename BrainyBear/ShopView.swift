@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PasscodeField
 
 struct Item: Identifiable {
     let id = UUID()
@@ -18,7 +19,10 @@ struct ShopView: View {
     @State private var showingAddItemView = false
     @State private var coins: Int?
     @State private var showingConfirmation = false
-    
+    @State private var showingPasscodeView = false
+    @State private var isShowingAlert = false
+    @State private var isPresentingPasscode = false
+
     var body: some View {
         NavigationView {
             Color.bbLightBrown
@@ -59,20 +63,56 @@ struct ShopView: View {
                 } else {
                     Spacer()
                     Text("No rewards to buy yet")
+                        .italic()
                     Spacer()
                 }
                 Button(action: {
-                    showingAddItemView = true
+                    showingPasscodeView = true
                 }) {
                     Image(systemName: "plus")
                         .padding()
+                        .font(.system(size: 35))
                         .background(Color.bbLilac)
                         .foregroundColor(Color.bbBlack)
                         .clipShape(Capsule())
                 }
+                .sheet(isPresented: $showingPasscodeView) {
+                    let candidatePasscodes = ["1234", "0000"]
+                    PasscodeField { digits, action in
+                        if candidatePasscodes.contains(digits.concat) {
+                            withAnimation {
+                                showingPasscodeView = false
+                                showingAddItemView = true
+                            }
+                            action(true)
+                        } else {
+                            withAnimation {
+                                isShowingAlert = true
+                            }
+                            action(false)
+                        }
+                    } label: {
+                        VStack(alignment: .center, spacing: 8) {
+                            Text("Parental security number")
+                                .font(.title)
+                                .foregroundColor(Color(.label))
+                            
+                            Text("4 digits")
+                                .font(.footnote)
+                                .foregroundColor(Color(.secondaryLabel))
+                        }
+                    }
+                    .alert("Wrong password!", isPresented: $isShowingAlert) {
+                        VStack {
+                            Button("Retry", role: .cancel) { }
+                            Button("Quit", role: .destructive) {showingPasscodeView = false}
+                        }
+                    }
+                }
                 .sheet(isPresented: $showingAddItemView) {
                     AddItemView(addItem: addItem)
                 }
+                
             })
         }
     }
