@@ -51,3 +51,10 @@
 "ARView" = "Vaihtoehtoisen todellisuuden näkymä";
 "ARViewInstructions" = "Katso virtuaalista ystävää Brainy Bearia vaihtoehtoisessa todellisuudessa";
 "ARViewRequirements" = "Vaatii luvan kameran käyttöön";
+
+// SettingsView strings
+"settings" = "Settings";
+
+// Alert
+"alertTitle" = "Hei sinä!";
+"alertMessage" = "Päivittäinen peliaika saavutettu!";

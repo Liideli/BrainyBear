@@ -36,8 +36,10 @@
 		F41D655A29D4398900FE6CA6 /* BrainyBearUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D655929D4398900FE6CA6 /* BrainyBearUITests.swift */; };
 		F41D655C29D4398900FE6CA6 /* BrainyBearUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D655B29D4398900FE6CA6 /* BrainyBearUITestsLaunchTests.swift */; };
 		F43673E429E9EC7C005E0E76 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F43673E629E9EC7C005E0E76 /* Localizable.strings */; };
+		F43673EB29EC06D8005E0E76 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43673EA29EC06D8005E0E76 /* SettingsView.swift */; };
+		F436749529ED5D08005E0E76 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = F436749429ED5D08005E0E76 /* Experience.rcproject */; };
 		F464A1D329DA17FC00DA0F68 /* AugmentedRealityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F464A1D229DA17FC00DA0F68 /* AugmentedRealityView.swift */; };
-		F464A1D529DA19B400DA0F68 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = F464A1D429DA19B400DA0F68 /* Experience.rcproject */; };
+		F464A1D529DA19B400DA0F68 /* Brian.usdc in Sources */ = {isa = PBXBuildFile; fileRef = F464A1D429DA19B400DA0F68 /* Brian.usdc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,8 +95,10 @@
 		F41D655B29D4398900FE6CA6 /* BrainyBearUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainyBearUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F43673E529E9EC7C005E0E76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F43673E729E9EC91005E0E76 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F43673EA29EC06D8005E0E76 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F436749429ED5D08005E0E76 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		F464A1D229DA17FC00DA0F68 /* AugmentedRealityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedRealityView.swift; sourceTree = "<group>"; };
-		F464A1D429DA19B400DA0F68 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
+		F464A1D429DA19B400DA0F68 /* Brian.usdc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brian.usdc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,9 +163,11 @@
 			isa = PBXGroup;
 			children = (
 				6A7CEA8729EC77B40005EDFD /* Brian.usdc */,
+				F43673EA29EC06D8005E0E76 /* SettingsView.swift */,
+				F436749429ED5D08005E0E76 /* Experience.rcproject */,
 				6AD0BB2F29E99E4E00C6936C /* Drawing */,
 				6ACF9D7329DD8D9400C17FDB /* Info.plist */,
-				F464A1D429DA19B400DA0F68 /* Experience.rcproject */,
+				F464A1D429DA19B400DA0F68 /* Brian.usdc */,
 				F41D653E29D4398800FE6CA6 /* BrainyBearApp.swift */,
 				F41D654029D4398800FE6CA6 /* ContentView.swift */,
 				F43673E629E9EC7C005E0E76 /* Localizable.strings */,
@@ -348,6 +354,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AD0BB3A29E9A5EC00C6936C /* DrawingView.swift in Sources */,
+				F436749529ED5D08005E0E76 /* Experience.rcproject in Sources */,
 				6A0BF65629DAF39800AA20D8 /* Model.swift in Sources */,
 				6A75133929F3F0550003625C /* Persistence.swift in Sources */,
 				6AD0BB3829E9A4D400C6936C /* CanvasView.swift in Sources */,
@@ -359,6 +367,7 @@
 				F41D653F29D4398800FE6CA6 /* BrainyBearApp.swift in Sources */,
 				6A1F882529F5462900F18BA2 /* DrawingView.swift in Sources */,
 				F464A1D529DA19B400DA0F68 /* Experience.rcproject in Sources */,
+				F464A1D529DA19B400DA0F68 /* Brian.usdc in Sources */,
 				6AD0BB3629E9A1EF00C6936C /* Model.xcdatamodeld in Sources */,
 				6A7CEA7529EB164D0005EDFD /* InfoView.swift in Sources */,
 				F464A1D329DA17FC00DA0F68 /* AugmentedRealityView.swift in Sources */,
@@ -369,6 +378,7 @@
 				CD445CDB29E1CBDB0069A787 /* StoryUI.swift in Sources */,
 				CD445CE129E1D0830069A787 /* Story.swift in Sources */,
 				6A02604229E716E10088E99E /* UIThemeVariables.swift in Sources */,
+				F43673EB29EC06D8005E0E76 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,13 +555,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BrainyBear/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to enable augmented reality experiences.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Allow access to location?";
 				INFOPLIST_KEY_NSLocationUsageDescription = "Allow access to location?";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow access to location?";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -578,13 +589,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BrainyBear/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to enable augmented reality experiences.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Allow access to location?";
 				INFOPLIST_KEY_NSLocationUsageDescription = "Allow access to location?";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow access to location?";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
