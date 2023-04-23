@@ -54,3 +54,7 @@
 
 // SettingsView strings
 "settings" = "Settings";
+
+// Alert
+"alertTitle" = "Hei sinä!";
+"alertMessage" = "Päivittäinen peliaika saavutettu!";

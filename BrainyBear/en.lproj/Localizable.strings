@@ -54,3 +54,7 @@
 
 // SettingsView strings
 "settings" = "Asetukset";
+
+// Alert
+"alertTitle" = "Hey you!";
+"alertMessage" = "Daily playtime reached!"; 

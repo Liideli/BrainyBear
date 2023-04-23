@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct BrainyBearApp: App {
+    // Localized string keys
+    let alertTitle:LocalizedStringKey = "alertTitle"
+    let alertMessage:LocalizedStringKey = "alertMessage"
     @StateObject var languageSettings = LanguageSettings(initialLanguage: "en") // Create an instance of LanguageSettings as an ObservableObject
     @State private var showAlert = false
     var body: some Scene {
@@ -23,7 +26,7 @@ struct BrainyBearApp: App {
                     }
                 }
                 .alert(isPresented: $showAlert) {
-                    Alert(title: Text("Hey you!"), message: Text("Daily playtime reached!"), dismissButton: .default(Text("OK")))
+                    Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                 }
         }
     }
