@@ -14,7 +14,6 @@ struct MathGameView: View {
         
     @State private var coins: Int?
 
-
     var body: some View {
         Color.bbLightBrown
             .ignoresSafeArea()
