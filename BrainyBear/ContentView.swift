@@ -53,7 +53,7 @@ struct ContentView: View {
                                 }
                                 Spacer()
                                 NavigationLink{
-                                    ShopView()
+                                    SettingsView()
                                 }
                             label:  {
                                 Image(systemName: "gearshape.fill")
