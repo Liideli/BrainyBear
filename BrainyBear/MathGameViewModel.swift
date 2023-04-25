@@ -61,7 +61,6 @@ class MathGameViewModel : ObservableObject {
             newGuestion()
             return true
         } else {
-            newGuestion()
             return false
         }
     }
