@@ -6,43 +6,23 @@
 //
 
 import Foundation
+import MapKit
 
-struct Model: Codable, Identifiable {
-    
+struct Location: Identifiable, Decodable {
     let id: Int
-    let name: Name
-    let street_address: Address
-    let location: Location
-    
-    enum CodingKeys: String, CodingKey {
-        case id, name, street_address, location
+    let name: [String: String]
+    let location: LocationData?
+
+    var coordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: location?.coordinates[1] ?? 1000, longitude: location?.coordinates[0] ?? 1000)
+    }
+
+    var title: String {
+        name["fi"] ?? ""
     }
 }
 
-struct Name: Codable {
-    let fi: String
-    let sv: String?
-    let en: String?
-    enum CodingKeys: String, CodingKey {
-        case fi, sv, en
-    }
-}
-
-struct Address: Codable {
-    let fi: String
-    let sv: String?
-    let en: String?
-    enum CodingKeys: String, CodingKey {
-        case fi, sv, en
-    }
-}
-
-struct Location: Codable {
+struct LocationData: Decodable {
     let type: String
     let coordinates: [Double]
-    enum CodingKeys: String, CodingKey {
-        case type, coordinates
-    }
 }
-
-

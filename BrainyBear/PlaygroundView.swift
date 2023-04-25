@@ -7,85 +7,67 @@
 
 import SwiftUI
 import MapKit
+import Foundation
 
 struct PlaygroundView: View {
-    
-    @ObservedObject var datas = Json()
-    
-    @State var model: [Model] = []
-    
-    @StateObject var manager = LocationManager()
-    
-    var region: Binding<MKCoordinateRegion>? {
-        guard let location = manager.location else {
-            return MKCoordinateRegion.goldenGateRegion().getBinding()
-        }
-        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
-        
-        return region.getBinding()
-    }
-    
-    var body: some View {
-        VStack {
-            if let region = region {
-                Map(
-                    coordinateRegion: region,
-                    interactionModes: .all,
-                    showsUserLocation: true,
-                    userTrackingMode: .constant(.follow),
-                    annotationItems: model
-                ) { model in
-                    MapAnnotation(
-                        coordinate: CLLocationCoordinate2D(
-                            latitude: model.location.coordinates[1],
-                            longitude: model.location.coordinates[0]
-                        )
-                    ){
-                        VStack {
-                            Text(model.name.en ?? model.name.fi)
-                        }
-                    }   
-                }
-            }
-        }
-    }
-}
+    @State var locations: [Location] = []
 
-class Json: ObservableObject {
-    @Published var json = [Model]()
-    
-    init() {
-        load()
-    }
-    
-    func load() {
-        let path = Bundle.main.path(forResource: "locations", ofType: "json")
-        let url = URL(fileURLWithPath: path!)
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            
-            do {
-                if let data = data {
-                    let json = try JSONDecoder().decode([Model].self, from: data)
-                    print(json)
-                    
-                    DispatchQueue.main.sync {
-                        self.json = json
-                    }
-                    
-                } else {
-                    print("No data")
-                }
-            } catch {
-                print("Error decoding JSON: \(error.localizedDescription)")
+    var body: some View {
+        MapView(locations: $locations)
+            .edgesIgnoringSafeArea(.all)
+            .onAppear {
+                loadData()
             }
-        }.resume()
+    }
+
+    private func loadData() {
+        if let fileLocation = Bundle.main.url(forResource: "locations", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: fileLocation)
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let locations = try decoder.decode([Location].self, from: data)
+                self.locations = locations
+            } catch {
+                print("error", error)
+            }
+        }
     }
 }
 
 struct PlaygroundView_Previews: PreviewProvider {
     static var previews: some View {
         PlaygroundView()
+    }
+}
+
+struct MapView: UIViewRepresentable {
+    @Binding var locations: [Location]
+    @StateObject var manager = LocationManager()
+
+    func makeUIView(context: Context) -> MKMapView {
+        MKMapView(frame: .zero)
+    }
+
+    func updateUIView(_ uiView: MKMapView, context: Context) {
+        uiView.removeAnnotations(uiView.annotations)
+
+        for location in locations {
+            let annotation = MKPointAnnotation()
+                annotation.coordinate = location.coordinate
+                annotation.title = location.title
+                uiView.addAnnotation(annotation)
+        }
+        
+        var region: Binding<MKCoordinateRegion>? {
+            guard let location = manager.location else {
+                return MKCoordinateRegion.goldenGateRegion().getBinding()
+            }
+            let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 50, longitudinalMeters: 50)
+            
+            return region.getBinding()
+        
+        }
     }
 }
 
