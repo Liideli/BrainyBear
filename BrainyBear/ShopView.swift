@@ -8,14 +8,14 @@
 import SwiftUI
 import PasscodeField
 
-struct Item: Identifiable {
+struct ShopItem: Identifiable {
     let id = UUID()
     let name: String
     let price: Double
 }
 
 struct ShopView: View {
-    @State private var items = [Item]()
+    @State private var items = [ShopItem]()
     @State private var showingAddItemView = false
     @State private var coins: Int?
     @State private var showingConfirmation = false
@@ -117,7 +117,7 @@ struct ShopView: View {
         }
     }
     
-    func addItem(item: Item) {
+    func addItem(item: ShopItem) {
         items.append(item)
     }
     
@@ -125,7 +125,7 @@ struct ShopView: View {
         items.remove(atOffsets: offsets)
     }
     
-    func deleteItem(_ item: Item) {
+    func deleteItem(_ item: ShopItem) {
         if let index = items.firstIndex(where: { $0.id == item.id }) {
             items.remove(at: index)
         }
@@ -133,7 +133,7 @@ struct ShopView: View {
 }
 
 struct ItemRow: View {
-    let item: Item
+    let item: ShopItem
     let onDelete: () -> Void
     
     var body: some View {
@@ -159,7 +159,7 @@ struct AddItemView: View {
     @State private var itemName = ""
     @State private var itemPrice = ""
     @Environment(\.presentationMode) var presentationMode
-    let addItem: (Item) -> Void
+    let addItem: (ShopItem) -> Void
     
     var body: some View {
         NavigationView {
@@ -182,7 +182,7 @@ struct AddItemView: View {
     
     func saveItem() {
         guard let price = Double(itemPrice) else { return }
-        let newItem = Item(name: itemName, price: price)
+        let newItem = ShopItem(name: itemName, price: price)
         addItem(newItem)
         presentationMode.wrappedValue.dismiss()
     }

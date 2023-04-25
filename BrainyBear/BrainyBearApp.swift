@@ -20,7 +20,6 @@ struct BrainyBearApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .environmentObject(languageSettings)
                 .onAppear {
                     // Start a timer that fires every 10 seconds
                     Timer.scheduledTimer(withTimeInterval: 1800, repeats: true) { _ in
