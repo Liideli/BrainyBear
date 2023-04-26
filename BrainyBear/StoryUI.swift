@@ -19,54 +19,67 @@ struct StoryUI: View {
     let stopListening:LocalizedStringKey = "stopListening"
     let storiesNav:LocalizedStringKey = "storiesNav"
     @State private var isSpeaking = false
+    // Initializing the textToSpeech
     private let synthesizer = AVSpeechSynthesizer()
-        var body: some View {
-            ScrollView {
-                 
+    var body: some View {
+        ZStack {
+            Color.bbLightBrown
+                .ignoresSafeArea()
+            
+            VStack {
                 Text(NSLocalizedString(titles[currentIndex], comment: ""))
-                        .font(.headline)
-                        .frame(maxWidth: .infinity, alignment: .center)
+                    .font(Font.custom("Marker Felt", size: 26))
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding()
+                
+                ScrollView {
+                    Text(NSLocalizedString(stories[currentIndex], comment: ""))
+                        .font(Font.custom("Marker Felt", size: 23))
                         .padding()
-                Text(NSLocalizedString(stories[currentIndex], comment: ""))
-                        .font(.body)
-                        .padding()
+                        
+                }
+                
+                HStack {
                     Button(action: {
                         currentIndex = (currentIndex + 1) % stories.count
                     }, label: {
+                        
                         Text(next)
                             .frame(minWidth: 0, maxWidth: .infinity)
-                                    .padding()
-                                    .foregroundColor(.white)
-                                    .background(Color.blue)
-                                    .cornerRadius(10)
+                            .padding(.vertical,40)
+                            .foregroundColor(.white)
+                            .background(Color.bbBabyBlue)
+                            .cornerRadius(10)
                     })
-                Button(isSpeaking ? stopListening : listen) {
-                                   if isSpeaking {
-                                       synthesizer.stopSpeaking(at: .immediate)
-                                   } else {
-                                       let utterance = AVSpeechUtterance(string: NSLocalizedString(stories[currentIndex], comment: ""))
-                                       synthesizer.speak(utterance)
-                                   }
-                                   isSpeaking.toggle()
-                                    
-                               }
-                                .padding()
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                                .foregroundColor(.white)
-                                .background(Color.blue)
-                                .cornerRadius(10)
-
+                    
+                    Button(isSpeaking ? stopListening : listen) {
+                        if isSpeaking {
+                            synthesizer.stopSpeaking(at: .immediate)
+                        } else {
+                            let utterance = AVSpeechUtterance(string: NSLocalizedString(stories[currentIndex], comment: ""))
+                            synthesizer.speak(utterance)
+                        }
+                        isSpeaking.toggle()
+                    }
+                    
+                    .padding(.vertical,40)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .foregroundColor(.white)
+                    .background(Color.bbBabyBlue)
+                    .cornerRadius(10)
                 }
                 .padding()
-                .navigationBarTitle(storiesNav)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                .alignmentGuide(.top) { d in d[VerticalAlignment.top] }
             }
         }
-    
-
-struct StoryUI_Previews: PreviewProvider {
-    static var previews: some View {
-        StoryUI()
+        .navigationBarTitle(storiesNav)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .alignmentGuide(.top) { d in d[VerticalAlignment.top] }
     }
-}
+        
+        struct StoryUI_Previews: PreviewProvider {
+            static var previews: some View {
+                StoryUI()
+            }
+        }
+    }
+

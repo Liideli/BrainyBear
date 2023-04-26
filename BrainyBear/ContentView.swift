@@ -75,7 +75,7 @@ struct ContentView: View {
                                 .offset(y: -90)
                                 .padding(.bottom, -90)
                                 NavigationLink {
-                                    AugmentedRealityView()
+                                    SpeechRecognition()
                                 } label: {
                                     Image(systemName: "mic.circle")
                                 }

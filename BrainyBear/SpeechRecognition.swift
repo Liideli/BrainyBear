@@ -16,7 +16,13 @@ struct SpeechRecognition: View {
         @State private var recognitionTask: SFSpeechRecognitionTask?
         @State private var audioEngine = AVAudioEngine()
         @State private var currentScreen = "Voice recognition"
-
+            
+    let voiceCommands = [
+           "Go to home screen": AnyView(ContentView()),
+           "Go to settings": AnyView(MathGameView()),
+           
+       ]
+       
         var body: some View {
             VStack {
                 Text("Recognized Text: \(recognizedText)")
@@ -42,13 +48,14 @@ struct SpeechRecognition: View {
                                     .padding()
                             }
             }
+            
         }
         
          func reset() {
             recognizedText = ""
         }
         func startRecording() {
-            
+            _ = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))
             recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
             guard let recognitionRequest = recognitionRequest else { fatalError("Unable to create recognition request") }
             recognitionRequest.shouldReportPartialResults = true
@@ -78,12 +85,15 @@ struct SpeechRecognition: View {
                 if let result = result {
                     let recognizedString = result.bestTranscription.formattedString
                     recognizedText = recognizedString
-                    if recognizedString.contains("home") {
-                        currentScreen = "Home"
-                    } else if recognizedString.contains("profile") {
-                        currentScreen = "Profile"
-                    } else if recognizedString.contains("settings") {
-                        currentScreen = "Settings"
+                    if recognizedString.lowercased().contains("math") {
+                        NavigationLink(destination: MathGameView()){
+                           }
+                    } else if recognizedString.lowercased().contains("drawing") {
+                        NavigationLink(destination: CanvasView()){
+                            }
+                    } else if recognizedString.lowercased().contains("playground") {
+                        NavigationLink(destination: PlaygroundView()){
+                            }
                     }
                 } else if let error = error {
                     print("Speech recognition task error: \(error)")

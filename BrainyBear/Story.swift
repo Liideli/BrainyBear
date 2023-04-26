@@ -17,7 +17,7 @@ struct Story: Decodable {
 class StoryManager {
     static let shared = StoryManager()
     private var stories = [Story]()
-    
+    // Logic for fetching the stories data from a local json
     private init() {
         guard let url = Bundle.main.url(forResource: "stories", withExtension: "json"),
               let data = try? Data(contentsOf: url),
@@ -26,7 +26,7 @@ class StoryManager {
         }
         stories = decodedData
     }
-    
+    // Get the stories
     func getStories() -> [Story] {
         return stories
     }
