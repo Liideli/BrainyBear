@@ -18,7 +18,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            Color.bbLightBrown
+            Color("BBGray")
                 .ignoresSafeArea()
                 .overlay(
                     VStack {
@@ -29,8 +29,7 @@ struct ContentView: View {
                                 } label: {
                                     Image(systemName: "info.circle")
                                         .padding()
-                                        .font(.system(size: 25))
-                                        .background(Color.bbLilac, in: Capsule())
+                                        .font(.system(size: 35))
                                         .foregroundColor(.bbBlack)
                                         .padding()
                                 }
@@ -42,9 +41,8 @@ struct ContentView: View {
                                         })
                                         .foregroundColor(Color.bbBlack)
                                         .padding()
-                                        .background(Color.bbLilac, in: Capsule())
                                         .shadow(radius: 5)
-                                        .font(.custom("Verdana", fixedSize: 25))
+                                        .font(.custom("Verdana", fixedSize: 35))
                                     
                                 }
                                 Spacer()
@@ -54,8 +52,7 @@ struct ContentView: View {
                             label:  {
                                 Image(systemName: "gearshape.fill")
                                     .padding()
-                                    .font(.system(size: 25))
-                                    .background(Color.bbLilac, in: Capsule())
+                                    .font(.system(size: 35))
                                     .foregroundColor(.bbBlack)
                                     .padding()
                             }
@@ -76,7 +73,7 @@ struct ContentView: View {
                                     .padding(10)
                                     .foregroundColor(Color.bbBlack)
                                     .font(.system(size: 35))
-                                    .background(Color.bbLilac, in: Capsule())
+                                    .background(Color.bbBabyBlue, in: Capsule())
                                     .offset(y: -90)
                                     .padding(.bottom, -90)
                                     NavigationLink {
@@ -87,7 +84,7 @@ struct ContentView: View {
                                     .padding(10)
                                     .foregroundColor(Color.bbBlack)
                                     .font(.system(size: 35))
-                                    .background(Color.bbLilac, in: Capsule())
+                                    .background(Color.bbBabyBlue, in: Capsule())
                                     .offset(y: -90)
                                     .padding(.bottom, -90)
                                     NavigationLink {
@@ -98,7 +95,7 @@ struct ContentView: View {
                                     .padding(10)
                                     .foregroundColor(Color.bbBlack)
                                     .font(.system(size: 35))
-                                    .background(Color.bbLilac, in: Capsule())
+                                    .background(Color.bbBabyBlue, in: Capsule())
                                     .offset(y: -90)
                                     .padding(.bottom, -90)
                                 }
@@ -116,7 +113,7 @@ struct ContentView: View {
                                                 .overlay(ImageOverlayMap(), alignment: .top)
                                         }
                                     }
-                                        .frame(width: 180, height: 180 )
+                                        .frame(width: 190, height: 190 )
                                         .cornerRadius(10)
                                         
                                         NavigationLink{
@@ -129,7 +126,7 @@ struct ContentView: View {
                                                     .overlay(ImageOverlayDraw(), alignment: .top)
                                             }
                                         }
-                                            .frame(width: 180, height: 180 )
+                                            .frame(width: 190, height: 190 )
                                             .cornerRadius(10)
                                         }
                                     }
@@ -146,7 +143,7 @@ struct ContentView: View {
                                                         .overlay(ImageOverlayStory(), alignment: .top)
                                                 }
                                             }
-                                            .frame(width: 180, height: 180 )
+                                            .frame(width: 190, height: 190 )
                                             .cornerRadius(10)
                                             
                                             NavigationLink {
@@ -160,7 +157,7 @@ struct ContentView: View {
                                                     .overlay(ImageOverlayMath(), alignment: .top)
                                             }
                                         }
-                                        .frame(width: 180, height: 180 )
+                                        .frame(width: 190, height: 190 )
                                         .cornerRadius(10)
                                         }
                                     }
@@ -178,10 +175,10 @@ struct ContentView: View {
             ZStack {
                 Text(map)
                     .padding(.top, 5)
-                    .frame(width: 180)
+                    .frame(width: 190)
                     .foregroundColor(.bbBlack)
-                    .background(Color("BBGray"))
-                    .font(.system(size: 25))
+                    .background(Color.bbLightBrown)
+                    .font(.system(size: 25, weight: .bold))
             }
         }
     }
@@ -194,10 +191,10 @@ struct ContentView: View {
             ZStack {
                 Text(draw)
                     .padding(.top, 5)
-                    .frame(width: 180)
+                    .frame(width: 190)
                     .foregroundColor(.bbBlack)
-                    .background(Color("BBGray"))
-                    .font(.system(size: 25))
+                    .background(Color.bbLightBrown)
+                    .font(.system(size: 25, weight: .bold))
             }
         }
     }
@@ -210,10 +207,10 @@ struct ContentView: View {
             ZStack {
                 Text(math)
                     .padding(.top, 5)
-                    .frame(width: 180)
+                    .frame(width: 190)
                     .foregroundColor(.bbBlack)
-                    .background(Color("BBGray"))
-                    .font(.system(size: 25))
+                    .background(Color.bbLightBrown)
+                    .font(.system(size: 25, weight: .bold))
             }
         }
     }
@@ -226,10 +223,10 @@ struct ContentView: View {
             ZStack {
                 Text(story)
                     .padding(.top, 5)
-                    .frame(width: 180)
+                    .frame(width: 190)
                     .foregroundColor(.bbBlack)
-                    .background(Color("BBGray"))
-                    .font(.system(size: 25))
+                    .background(Color.bbLightBrown)
+                    .font(.system(size: 25, weight: .bold))
             }
         }
     }
