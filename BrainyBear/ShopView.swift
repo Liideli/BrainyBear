@@ -11,7 +11,7 @@ import PasscodeField
 struct ShopItem: Identifiable {
     let id = UUID()
     let name: String
-    let price: Double
+    let price: Int
 }
 
 struct ShopView: View {
@@ -52,10 +52,18 @@ struct ShopView: View {
                                 showingConfirmation = true
                             }
                             .confirmationDialog("Buy item", isPresented: $showingConfirmation) {
-                                Button("Buy item") { deleteItem(item) }
-                                Button("Cancel", role: .cancel) { }
+                                if (coins ?? 0 >= item.price) {
+                                    Button("Buy item") { deleteItem(item) }
+                                    Button("Cancel", role: .cancel) { }
+                                } else {
+                                    Button("Cancel", role: .cancel) { }
+                                }
                             } message: {
-                                Text("Do you want to get \(item.name) for \(item.price)")
+                                if (coins ?? 0 >= item.price) {
+                                    Text("Do you want to get \(item.name) for \(item.price)")
+                                } else {
+                                    Text("Not enough money to buy \(item.name)")
+                                }
                             }
                         }
                         .deleteDisabled(true)
@@ -112,7 +120,6 @@ struct ShopView: View {
                 .sheet(isPresented: $showingAddItemView) {
                     AddItemView(addItem: addItem)
                 }
-                
             })
         }
     }
@@ -126,8 +133,12 @@ struct ShopView: View {
     }
     
     func deleteItem(_ item: ShopItem) {
-        if let index = items.firstIndex(where: { $0.id == item.id }) {
-            items.remove(at: index)
+        if (coins ?? 0 >= item.price) {
+            if let index = items.firstIndex(where: { $0.id == item.id }) {
+                coins = (coins ?? 0) - item.price
+                DataController.shared.saveScore(coins!)
+                items.remove(at: index)
+            }
         }
     }
 }
@@ -141,7 +152,7 @@ struct ItemRow: View {
             VStack(alignment: .leading) {
                 Text(item.name)
                     .font(.headline)
-                Text("$\(item.price, specifier: "%.2f")")
+                Text("$\(item.price)")
                     .font(.subheadline)
             }
             Spacer()
@@ -181,7 +192,7 @@ struct AddItemView: View {
     }
     
     func saveItem() {
-        guard let price = Double(itemPrice) else { return }
+        guard let price = Int(itemPrice) else { return }
         let newItem = ShopItem(name: itemName, price: price)
         addItem(newItem)
         presentationMode.wrappedValue.dismiss()
