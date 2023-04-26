@@ -56,10 +56,11 @@ struct MathGameView: View {
                     .padding(30)
                     .background(Color.white, in: Capsule())
                     .padding()
-                Text((answerTextSwitch ? "Answer correct" : "Wrong answer"))
+                Text((answerTextSwitch ? "Answer correct ✅" : "Wrong answer ❌"))
                     .bold()
                     .foregroundColor((answerTextSwitch ? Color.green : Color.red))
                     .opacity((firstAnswer ? 0 : 1))
+                    .animation(.spring(), value: answerTextSwitch)
                 Spacer()
             }
             HStack {

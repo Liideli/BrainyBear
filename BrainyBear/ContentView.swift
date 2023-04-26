@@ -16,11 +16,9 @@ struct ContentView: View {
     let draw:LocalizedStringKey = "draw"
     let story:LocalizedStringKey = "story"
     let math:LocalizedStringKey = "math"
-    
-    @Environment(\.managedObjectContext) private var managedObjectContext
-        
+            
     @State private var coins: Int?
-    
+            
     var body: some View {
         NavigationView {
             Color.bbLightBrown
