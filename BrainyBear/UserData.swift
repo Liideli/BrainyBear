@@ -13,8 +13,7 @@ import CoreData
 
 class DataController {
     
-    // MARK: - Properties
-    
+    // shared property to access the object in multiple views
     static let shared = DataController()
     
     private lazy var persistentContainer: NSPersistentContainer = {
@@ -27,56 +26,66 @@ class DataController {
         return container
     }()
     
+    // main context to the application
     private lazy var mainContext: NSManagedObjectContext = {
         let context = persistentContainer.viewContext
         context.automaticallyMergesChangesFromParent = true
         return context
     }()
     
+    // background context of the application to save to. The core data actions are saved here to allow performing actions when navigating between views.
     private lazy var backgroundContext: NSManagedObjectContext = {
         let context = persistentContainer.newBackgroundContext()
         context.automaticallyMergesChangesFromParent = true
         return context
     }()
     
-    // MARK: - Methods
-    
-    func saveScore(_ score: Int) {
+    // Saves the score to the Core Data store
+    func saveScore(_ coins: Int) {
+        
+        // Perform the Core Data operation on the background context
         backgroundContext.perform { [weak self] in
             guard let self = self else { return }
             
+            // Create a fetch request to check if a Coin entity already exists
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Coin")
             fetchRequest.fetchLimit = 1
             
             if let result = try? self.backgroundContext.fetch(fetchRequest) as? [NSManagedObject], let existingScore = result.first {
-                existingScore.setValue(score, forKey: "coins")
+                // If a Score entity exists, update its score value
+                existingScore.setValue(coins, forKey: "coins")
             } else {
+                // If a Score entity does not exist, create a new one and set its score value
                 let entity = NSEntityDescription.entity(forEntityName: "Coin", in: self.backgroundContext)!
                 let scoreObject = NSManagedObject(entity: entity, insertInto: self.backgroundContext)
-                scoreObject.setValue(score, forKey: "coins")
+                scoreObject.setValue(coins, forKey: "coins")
             }
             
+            // Save the background context
             do {
                 try self.backgroundContext.save()
             } catch let error as NSError {
-                print("Could not save score. \(error), \(error.userInfo)")
+                print("Could not save coins to background context. \(error), \(error.userInfo)")
             }
             
+            // Save changes to the main context
             self.mainContext.performAndWait {
                 do {
                     try self.mainContext.save()
                 } catch let error as NSError {
-                    print("Could not save score to main context. \(error), \(error.userInfo)")
+                    print("Could not save coins to main context. \(error), \(error.userInfo)")
                 }
             }
         }
     }
     
+    // Fetches the score from the Core Data store
     func fetchScore() -> Int? {
         var coins: Int?
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Coin")
         fetchRequest.fetchLimit = 1
         
+        // Perform the Core Data operation on the background context
         backgroundContext.performAndWait {
             do {
                 let results = try backgroundContext.fetch(fetchRequest) as! [NSManagedObject]
