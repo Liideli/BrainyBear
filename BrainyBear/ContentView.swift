@@ -11,11 +11,6 @@ import UserNotifications
 import CoreData
 
 struct ContentView: View {
-    // Localized string keys
-    let map:LocalizedStringKey = "map"
-    let draw:LocalizedStringKey = "draw"
-    let story:LocalizedStringKey = "story"
-    let math:LocalizedStringKey = "math"
     
     @Environment(\.managedObjectContext) private var managedObjectContext
         
@@ -115,71 +110,127 @@ struct ContentView: View {
                                         PlaygroundView()
                                     } label: {
                                         VStack {
-                                            Image(systemName: "map")
-                                                .font(.system(size: 60))
-                                            Text(map)
-                                                .font(.system(size: 25))
+                                            Image("map-image")
+                                                .resizable()
+                                                .scaledToFit()
+                                                .overlay(ImageOverlayMap(), alignment: .top)
                                         }
                                     }
-                                    .frame(width: 150, height: 150 )
-                                    .background(Color.bbBabyBlue)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(10)
+                                        .frame(width: 180, height: 180 )
+                                        .cornerRadius(10)
+                                        
+                                        NavigationLink{
+                                            CanvasView()
+                                        } label: {
+                                            VStack {
+                                                Image("draw-image")
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .overlay(ImageOverlayDraw(), alignment: .top)
+                                            }
+                                        }
+                                            .frame(width: 180, height: 180 )
+                                            .cornerRadius(10)
+                                        }
+                                    }
                                     
-                                    NavigationLink{
-                                        CanvasView()
-                                    } label: {
-                                        VStack {
-                                            Image(systemName: "paintbrush")
-                                                .font(.system(size: 60))
-                                            Text(draw)
-                                                .font(.system(size: 25))
+                                    Group {
+                                        HStack {
+                                            NavigationLink{
+                                                StoryUI()
+                                            } label: {
+                                                VStack {
+                                                    Image("story-image")
+                                                        .resizable()
+                                                        .scaledToFit()
+                                                        .overlay(ImageOverlayStory(), alignment: .top)
+                                                }
+                                            }
+                                            .frame(width: 180, height: 180 )
+                                            .cornerRadius(10)
+                                            
+                                            NavigationLink {
+                                                MathGameView()
+                                            }
+                                        label: {
+                                            VStack {
+                                                Image("math-image")
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .overlay(ImageOverlayMath(), alignment: .top)
+                                            }
+                                        }
+                                        .frame(width: 180, height: 180 )
+                                        .cornerRadius(10)
                                         }
                                     }
-                                    .frame(width: 150, height: 150 )
-                                    .background(Color.bbBabyBlue)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(10)
                                 }
-                            }
-                            
-                            Group {
-                                HStack {
-                                    NavigationLink{
-                                        StoryUI()
-                                    } label: {
-                                        VStack {
-                                            Image(systemName: "books.vertical")
-                                                .font(.system(size: 60))
-                                            Text(story)
-                                                .font(.system(size: 25))
-                                        }
-                                    }
-                                    .frame(width: 150, height: 150 )
-                                    .background(Color.bbBabyBlue)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(10)
-                                    
-                                    NavigationLink {
-                                        MathGameView()
-                                    }
-                                label: {
-                                    VStack {
-                                        Image(systemName: "plus.forwardslash.minus")
-                                            .font(.system(size: 60))
-                                        Text(math)
-                                            .font(.system(size: 25))
-                                    }
-                                }
-                                .frame(width: 150, height: 150 )
-                                .background(Color.bbBabyBlue)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                                }
-                            }
-                        }
-                        
-                    })
+                                
+                            })
+        }
+    }
+    
+    struct ImageOverlayMap: View {
+        
+        let map:LocalizedStringKey = "map"
+        
+        var body: some View {
+            ZStack {
+                Text(map)
+                    .padding(.top, 5)
+                    .frame(width: 180)
+                    .foregroundColor(.bbBlack)
+                    .background(Color("BBGray"))
+                    .font(.system(size: 25))
+            }
+        }
+    }
+    
+    struct ImageOverlayDraw: View {
+        
+        let draw:LocalizedStringKey = "draw"
+        
+        var body: some View {
+            ZStack {
+                Text(draw)
+                    .padding(.top, 5)
+                    .frame(width: 180)
+                    .foregroundColor(.bbBlack)
+                    .background(Color("BBGray"))
+                    .font(.system(size: 25))
+            }
+        }
+    }
+    
+    struct ImageOverlayMath: View {
+        
+        let math:LocalizedStringKey = "math"
+        
+        var body: some View {
+            ZStack {
+                Text(math)
+                    .padding(.top, 5)
+                    .frame(width: 180)
+                    .foregroundColor(.bbBlack)
+                    .background(Color("BBGray"))
+                    .font(.system(size: 25))
+            }
+        }
+    }
+    
+    struct ImageOverlayStory: View {
+        
+        let story:LocalizedStringKey = "story"
+        
+        var body: some View {
+            ZStack {
+                Text(story)
+                    .padding(.top, 5)
+                    .frame(width: 180)
+                    .foregroundColor(.bbBlack)
+                    .background(Color("BBGray"))
+                    .font(.system(size: 25))
+            }
         }
     }
     
