@@ -18,7 +18,7 @@ struct MathGameView: View {
     @State var firstAnswer: Bool = true
     
     func answerCorrect () {
-        coins = (coins ?? 0) + 10
+        coins = (coins ?? 0) + 1
         DataController.shared.saveScore(coins!)
         answerTextSwitch = true
         firstAnswer = false
@@ -55,6 +55,7 @@ struct MathGameView: View {
                         fixedSize: 60))
                     .padding(30)
                     .background(Color.white, in: Capsule())
+                    .animation(.spring(), value: coins)
                     .padding()
                 Text((answerTextSwitch ? "Answer correct ✅" : "Wrong answer ❌"))
                     .bold()

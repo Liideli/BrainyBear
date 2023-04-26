@@ -68,6 +68,8 @@ struct ShopView: View {
                         }
                         .deleteDisabled(true)
                     }
+                    .background(Color.bbLightBrown)
+                    .scrollContentBackground(.hidden)
                 } else {
                     Spacer()
                     Text("No rewards to buy yet")
