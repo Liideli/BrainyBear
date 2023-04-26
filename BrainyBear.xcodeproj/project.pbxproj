@@ -79,7 +79,7 @@
 		6A7CEA9229F0813D0005EDFD /* UserData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserData.xcdatamodel; sourceTree = "<group>"; };
 		6A7CEA9429F144A40005EDFD /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		6A8814BB29F596380032E2E1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		6AA5521B29F7E67C00562A6D /* Brian.usdc */ = {isa = PBXFileReference; lastKnownFileType = file; name = Brian.usdc; path = ../../../Downloads/Brian.usdc; sourceTree = "<group>"; };
+		6AA5521B29F7E67C00562A6D /* Brian.usdc */ = {isa = PBXFileReference; lastKnownFileType = file; name = Brian.usdc; path = BrainyBear/Brian.usdc; sourceTree = "<group>"; };
 		6ACF9D7329DD8D9400C17FDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6ACF9D7429DD919800C17FDB /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		6AD0BB3529E9A1EF00C6936C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -145,6 +145,14 @@
 			path = Drawing;
 			sourceTree = "<group>";
 		};
+		CD770E1329F94D0E00949803 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				6A607E2129E2C34500296FF9 /* .gitignore */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		F41D653229D4398800FE6CA6 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +161,7 @@
 				F41D654E29D4398900FE6CA6 /* BrainyBearTests */,
 				F41D655829D4398900FE6CA6 /* BrainyBearUITests */,
 				F41D653C29D4398800FE6CA6 /* Products */,
+				CD770E1329F94D0E00949803 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
