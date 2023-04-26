@@ -184,7 +184,6 @@
 				6AD30AD829D711730089F1CC /* LocationManager.swift */,
 				6A0BF65529DAF39800AA20D8 /* Model.swift */,
 				6ACF9D7429DD919800C17FDB /* locations.json */,
-				6A607E2129E2C34500296FF9 /* .gitignore */,
 				6A3D4F5E29D99B2C004DBAA0 /* MathGameView.swift */,
 				6A3D4F6029DDBCB8004DBAA0 /* UserData.swift */,
 				6A3D4F6229DDBD39004DBAA0 /* MathGameViewModel.swift */,

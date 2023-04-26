@@ -7,79 +7,39 @@
 
 import SwiftUI
 import MapKit
+import Foundation
 
 struct PlaygroundView: View {
     
-    @ObservedObject var datas = Json()
-    
-    @State var model: [Model] = []
-    
-    @StateObject var manager = LocationManager()
-    
-    var region: Binding<MKCoordinateRegion>? {
-        guard let location = manager.location else {
-            return MKCoordinateRegion.goldenGateRegion().getBinding()
-        }
-        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 5000, longitudinalMeters: 5000)
-        
-        return region.getBinding()
-    }
-    
-    var body: some View {
-        VStack {
-            if let region = region {
-                Map(
-                    coordinateRegion: region,
-                    interactionModes: .all,
-                    showsUserLocation: true,
-                    userTrackingMode: .constant(.follow),
-                    annotationItems: model
-                ) { model in
-                    MapAnnotation(
-                        coordinate: CLLocationCoordinate2D(
-                            latitude: model.location.coordinates[0],
-                            longitude: model.location.coordinates[1]
-                        )
-                    ){
-                        VStack {
-                            Text(model.name.en ?? model.name.fi)
-                        }
-                    }   
-                }
-            }
-        }
-    }
-}
+    // State to store an array of Location objects
+    @State var locations: [Location] = []
 
-class Json: ObservableObject {
-    @Published var json = [Model]()
-    
-    init() {
-        load()
-    }
-    
-    func load() {
-        let path = Bundle.main.path(forResource: "locations", ofType: "json")
-        let url = URL(fileURLWithPath: path!)
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            
-            do {
-                if let data = data {
-                    let json = try JSONDecoder().decode([Model].self, from: data)
-                    print(json)
-                    
-                    DispatchQueue.main.sync {
-                        self.json = json
-                    }
-                    
-                } else {
-                    print("No data")
-                }
-            } catch {
-                print(error)
+    var body: some View {
+        // Display a MapView, passing in the locations state as a binding
+        MapView(locations: $locations)
+            .accentColor(Color(.green))
+            .edgesIgnoringSafeArea(.all)
+            .onAppear {
+                loadData()
             }
-        }.resume()
+    }
+
+    private func loadData() {
+        // Get the URL of the locations.json file
+        if let fileLocation = Bundle.main.url(forResource: "locations", withExtension: "json") {
+            do {
+                // Read the contents of the file into a Data object
+                let data = try Data(contentsOf: fileLocation)
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                // Decode the data into an array of Location objects
+                let locations = try decoder.decode([Location].self, from: data)
+                // Update the state with the decoded locations
+                self.locations = locations
+            } catch {
+                print("error", error)
+            }
+        }
     }
 }
 
@@ -89,3 +49,39 @@ struct PlaygroundView_Previews: PreviewProvider {
     }
 }
 
+struct MapView: UIViewRepresentable {
+    
+    // A binding to the state containing the array of Location objects
+    @Binding var locations: [Location]
+    // Create a LocationManager object to get the user's current location
+    @StateObject var manager = LocationManager()
+
+    // Creates a new MKMapView object when this view is first displayed
+    func makeUIView(context: Context) -> MKMapView {
+        let mapView = MKMapView(frame: .zero)
+        mapView.showsUserLocation = true
+        return mapView
+    }
+
+    // Updates the view with new data
+    func updateUIView(_ uiView: MKMapView, context: Context) {
+        
+        // Remove any existing annotations from the map
+        uiView.removeAnnotations(uiView.annotations)
+
+        // Add a new annotation for each location in the array
+        for location in locations {
+            let annotation = MKPointAnnotation()
+                annotation.coordinate = location.coordinate
+                annotation.title = location.title
+                uiView.addAnnotation(annotation)
+        }
+        
+        // If we have a valid user location, center the map on that location
+        if let userLocation = manager.location?.coordinate {
+                let region = MKCoordinateRegion(center: userLocation, span: MKCoordinateSpan(latitudeDelta: 0.025, longitudeDelta: 0.025))
+                uiView.userTrackingMode = .none
+                uiView.setRegion(region, animated: true)
+            }
+    }
+}
