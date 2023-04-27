@@ -15,13 +15,15 @@ struct ShopItem: Identifiable {
 }
 
 struct ShopView: View {
-    @State private var items = [ShopItem]()
+   //@State private var items = [ShopItem]()
     @State private var showingAddItemView = false
     @State private var coins: Int?
     @State private var showingConfirmation = false
     @State private var showingPasscodeView = false
     @State private var isShowingAlert = false
     @State private var isPresentingPasscode = false
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(sortDescriptors: []) var items: FetchedResults<StoreItem>
 
     var body: some View {
         NavigationView {
@@ -60,9 +62,9 @@ struct ShopView: View {
                                 }
                             } message: {
                                 if (coins ?? 0 >= item.price) {
-                                    Text("Do you want to get \(item.name) for \(item.price)")
+                                    Text("Do you want to get \(item.name ?? "unknown") for \(item.price)")
                                 } else {
-                                    Text("Not enough money to buy \(item.name)")
+                                    Text("Not enough money to buy \(item.name ?? "unknown")")
                                 }
                             }
                         }
@@ -127,32 +129,37 @@ struct ShopView: View {
     }
     
     func addItem(item: ShopItem) {
-        items.append(item)
+        let newItem = StoreItem(context: managedObjectContext)
+        newItem.id = item.id
+        newItem.name = item.name
+        newItem.price = Int32(item.price)
+        try? managedObjectContext.save()
+        //items.append(item)
     }
     
     func deleteItems(at offsets: IndexSet) {
-        items.remove(atOffsets: offsets)
+        //items.remove(atOffsets: offsets)
     }
     
-    func deleteItem(_ item: ShopItem) {
+    func deleteItem(_ item: StoreItem) {
         if (coins ?? 0 >= item.price) {
             if let index = items.firstIndex(where: { $0.id == item.id }) {
-                coins = (coins ?? 0) - item.price
+                coins = (coins ?? 0) - Int(item.price)
                 DataController.shared.saveScore(coins!)
-                items.remove(at: index)
+                //items.remove(at: index)
             }
         }
     }
 }
 
 struct ItemRow: View {
-    let item: ShopItem
+    let item: StoreItem
     let onDelete: () -> Void
     
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(item.name)
+                Text(item.name ?? "Unknown")
                     .font(.headline)
                 Text("$\(item.price)")
                     .font(.subheadline)
