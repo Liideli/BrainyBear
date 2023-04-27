@@ -12,8 +12,8 @@ import AVFoundation
 struct StoryUI: View {
     @State private var currentIndex = 0
     // Localized string keys
-    private let titles = ["title1", "title2", "title3"]
-    private let stories = ["story1", "story2", "story3"]
+    private let titles = ["title1", "title2", "title3", "title4", "title5", "title6", "title7", "title8", "title9", "title10"]
+    private let stories = ["story1", "story2", "story3", "story4", "story5", "story6", "story7", "story8", "story9", "story10"]
     let next:LocalizedStringKey = "next"
     let listen:LocalizedStringKey = "listen"
     let stopListening:LocalizedStringKey = "stopListening"

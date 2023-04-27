@@ -9,6 +9,11 @@ import SwiftUI
 
 struct AddNewCanvasView: View {
     
+    // Localized string keys
+    let titleCanvas:LocalizedStringKey = "titleCanvas"
+    let addNewCanvas:LocalizedStringKey = "addNewCanvas"
+    let save:LocalizedStringKey = "save"
+    
     @Environment (\.managedObjectContext) var viewContext
     @Environment (\.presentationMode) var presentationMode
     
@@ -18,10 +23,10 @@ struct AddNewCanvasView: View {
         NavigationStack{
             Form{
                 Section{
-                    TextField("Canvas Title", text: $canvasTitle)
+                    TextField(titleCanvas, text: $canvasTitle)
                 }
             }
-            .navigationTitle(Text("Add New Canvas"))
+            .navigationTitle(Text(addNewCanvas))
             .navigationBarItems(leading: Button(action: {
                 presentationMode.wrappedValue.dismiss()
             }, label: {
@@ -42,7 +47,7 @@ struct AddNewCanvasView: View {
                     self.presentationMode.wrappedValue.dismiss()
                 }
             }, label: {
-                Text("Save")
+                Text(save)
             }))
         }
     }

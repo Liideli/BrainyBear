@@ -10,6 +10,10 @@ import CoreData
 
 struct CanvasView: View {
     
+    // Localized string keys
+    let addCanvas:LocalizedStringKey = "addCanvas"
+    let drawing:LocalizedStringKey = "drawing"
+    
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(entity: Drawing.entity(), sortDescriptors: []) var drawings: FetchedResults<Drawing>
@@ -32,7 +36,7 @@ struct CanvasView: View {
                     }, label: {
                         HStack{
                             Image(systemName: "plus")
-                            Text("Add Canvas")
+                            Text(addCanvas)
                         }
                     })
                     .foregroundColor(.orange)
@@ -40,7 +44,7 @@ struct CanvasView: View {
                         AddNewCanvasView().environment(\.managedObjectContext, viewContext)
                     })
                 }
-                .navigationTitle(Text("Drawing"))
+                .navigationTitle(Text(drawing))
                 .toolbar {
                     EditButton()
                 }

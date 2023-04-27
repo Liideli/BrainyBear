@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
+    // Localized string keys
+    let settings:LocalizedStringKey = "settings"
+    let changeParentalPassword:LocalizedStringKey = "changeParentalPassword"
+    
     var body: some View {
         Color.bbLightBrown
             .ignoresSafeArea()
             .overlay(
                 ScrollView {
                     VStack (alignment: .leading){
-                        Text("Settings")
+                        Text(settings)
                             .font(.largeTitle)
                             .padding()
                             .onTapGesture {
@@ -22,7 +27,7 @@ struct SettingsView: View {
                             }
                         Divider()
                         HStack {
-                            Text("Change parental password")
+                            Text(changeParentalPassword)
                                 .padding()
                             Spacer()
                             Image(systemName: "arrow.right")

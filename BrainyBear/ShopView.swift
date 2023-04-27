@@ -15,6 +15,22 @@ struct ShopItem: Identifiable {
 }
 
 struct ShopView: View {
+    
+    // Localized string keys
+    let rewardStore:LocalizedStringKey = "rewardStore"
+    let buyItem:LocalizedStringKey = "buyItem"
+    let cancel:LocalizedStringKey = "cancel"
+    let doYouWant:LocalizedStringKey = "doYouWant"
+    let `for`:LocalizedStringKey = "for"
+    let coinsAmount:LocalizedStringKey = "coinsAmount"
+    let notEnough:LocalizedStringKey = "notEnough"
+    let noRewardsToBuyYet:LocalizedStringKey = "noRewardsToBuyYet"
+    let parentalPassword:LocalizedStringKey = "parentalPassword"
+    let fourDigits:LocalizedStringKey = "fourDigits"
+    let wrongPassword:LocalizedStringKey = "wrongPassword"
+    let retry:LocalizedStringKey = "retry"
+    let quit:LocalizedStringKey = "quit"
+    
     @State private var items = [ShopItem]()
     @State private var showingAddItemView = false
     @State private var coins: Int?
@@ -30,7 +46,7 @@ struct ShopView: View {
                 .overlay(
             VStack {
                 HStack {
-                    Text("Reward store")
+                    Text(rewardStore)
                         .font(.largeTitle)
                         .padding()
                     Spacer()
@@ -51,18 +67,19 @@ struct ShopView: View {
                             ItemRow(item: item) {
                                 showingConfirmation = true
                             }
-                            .confirmationDialog("Buy item", isPresented: $showingConfirmation) {
+                            .confirmationDialog(buyItem, isPresented: $showingConfirmation) {
                                 if (coins ?? 0 >= item.price) {
-                                    Button("Buy item") { deleteItem(item) }
-                                    Button("Cancel", role: .cancel) { }
+                                    Button(buyItem) { deleteItem(item) }
+                                    Button(cancel, role: .cancel) { }
                                 } else {
-                                    Button("Cancel", role: .cancel) { }
+                                    Button(cancel, role: .cancel) { }
                                 }
                             } message: {
                                 if (coins ?? 0 >= item.price) {
-                                    Text("Do you want to get \(item.name) for \(item.price)")
+                                    Text(doYouWant) + Text("\(item.name)") + Text(`for`) + Text("\(item.price) ") + Text(coinsAmount)
+
                                 } else {
-                                    Text("Not enough money to buy \(item.name)")
+                                    Text(notEnough) + Text("\(item.name)")
                                 }
                             }
                         }
@@ -72,7 +89,7 @@ struct ShopView: View {
                     .scrollContentBackground(.hidden)
                 } else {
                     Spacer()
-                    Text("No rewards to buy yet")
+                    Text(noRewardsToBuyYet)
                         .italic()
                     Spacer()
                 }
@@ -103,11 +120,11 @@ struct ShopView: View {
                         }
                     } label: {
                         VStack(alignment: .center, spacing: 8) {
-                            Text("Parental security number")
+                            Text(parentalPassword)
                                 .font(.title)
                                 .foregroundColor(Color(.label))
                             
-                            Text("4 digits")
+                            Text(fourDigits)
                                 .font(.footnote)
                                 .foregroundColor(Color(.secondaryLabel))
                         }
@@ -169,6 +186,13 @@ struct ItemRow: View {
 }
 
 struct AddItemView: View {
+    
+    // Localized string keys
+    let nameItem:LocalizedStringKey = "nameItem"
+    let price:LocalizedStringKey = "price"
+    let save:LocalizedStringKey = "save"
+    let itemAdd:LocalizedStringKey = "itemAdd"
+    
     @State private var itemName = ""
     @State private var itemPrice = ""
     @Environment(\.presentationMode) var presentationMode
@@ -178,18 +202,18 @@ struct AddItemView: View {
         NavigationView {
             Form {
                 Section {
-                    TextField("Item Name", text: $itemName)
-                    TextField("Price", text: $itemPrice)
+                    TextField(nameItem, text: $itemName)
+                    TextField(price, text: $itemPrice)
                         .keyboardType(.decimalPad)
                 }
                 
                 Section {
                     Button(action: saveItem) {
-                        Text("Save")
+                        Text(save)
                     }
                 }
             }
-            .navigationBarTitle("Add Item")
+            .navigationBarTitle(itemAdd)
         }
     }
     

@@ -10,6 +10,10 @@ import CoreData
 
 struct MathGameView: View {
 
+    // Localized string keys
+    let correctAnswer:LocalizedStringKey = "correctAnswer"
+    let wrongAnswer:LocalizedStringKey = "wrongAnswer"
+    
     @ObservedObject var mathGame = MathGameViewModel()
         
     @State private var coins: Int?
@@ -57,7 +61,7 @@ struct MathGameView: View {
                     .background(Color.white, in: Capsule())
                     .animation(.spring(), value: coins)
                     .padding()
-                Text((answerTextSwitch ? "Answer correct ✅" : "Wrong answer ❌"))
+                Text((answerTextSwitch ? correctAnswer : wrongAnswer))
                     .bold()
                     .foregroundColor((answerTextSwitch ? Color.green : Color.red))
                     .opacity((firstAnswer ? 0 : 1))

@@ -9,6 +9,13 @@ import SwiftUI
 import Speech
 struct SpeechRecognition: View {
     
+    // Localized string keys
+    let textRecognized:LocalizedStringKey = "textRecognized"
+    let screenCurrent:LocalizedStringKey = "screenCurrent"
+    let recordingStart:LocalizedStringKey = "recordingStart"
+    let recordingStop:LocalizedStringKey = "recordingStop"
+    let resetText:LocalizedStringKey = "reset"
+    
         @State private var isRecording = false
         @State private var recognizedText = ""
         @State private var speechRecognizer = SFSpeechRecognizer()
@@ -25,26 +32,28 @@ struct SpeechRecognition: View {
        
         var body: some View {
             VStack {
-                Text("Recognized Text: \(recognizedText)")
+                Text(textRecognized)
+                Text("\(recognizedText)")
                     .padding()
-                Text("Current screen: \(currentScreen)")
+                Text(screenCurrent)
+                Text("\(currentScreen)")
                 Button(action: {
                     startRecording()
                 }) {
-                    Text("Start Recording")
+                    Text(recordingStart)
                 }
                 .padding()
                 Button(action: {
                     stopRecording()
                 }) {
-                    Text("Stop Recording")
+                    Text(recordingStop)
                 }
                 .padding()
                 
                 Button(action: {
                                 reset()
                             }) {
-                                Text("Reset")
+                                Text(resetText)
                                     .padding()
                             }
             }
