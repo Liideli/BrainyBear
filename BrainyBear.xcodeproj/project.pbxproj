@@ -24,6 +24,7 @@
 		6A7CEA9829F15EA10005EDFD /* PasscodeField in Frameworks */ = {isa = PBXBuildFile; productRef = 6A7CEA9729F15EA10005EDFD /* PasscodeField */; };
 		6A8814BC29F596380032E2E1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8814BB29F596380032E2E1 /* SettingsView.swift */; };
 		6AA5521C29F7E67C00562A6D /* Brian.usdc in Resources */ = {isa = PBXBuildFile; fileRef = 6AA5521B29F7E67C00562A6D /* Brian.usdc */; };
+		6AA5522029F959BF00562A6D /* BearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5521F29F959BF00562A6D /* BearView.swift */; };
 		6ACF9D7529DD919800C17FDB /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ACF9D7429DD919800C17FDB /* locations.json */; };
 		6AD0BB3629E9A1EF00C6936C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6AD0BB3429E9A1EF00C6936C /* Model.xcdatamodeld */; };
 		6AD0BB3829E9A4D400C6936C /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD0BB3729E9A4D400C6936C /* CanvasView.swift */; };
@@ -81,6 +82,8 @@
 		6A7CEA9429F144A40005EDFD /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		6A8814BB29F596380032E2E1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		6AA5521B29F7E67C00562A6D /* Brian.usdc */ = {isa = PBXFileReference; lastKnownFileType = file; name = Brian.usdc; path = BrainyBear/Brian.usdc; sourceTree = "<group>"; };
+		6AA5521B29F7E67C00562A6D /* Brian.usdc */ = {isa = PBXFileReference; lastKnownFileType = file; name = Brian.usdc; path = ../../../Downloads/Brian.usdc; sourceTree = "<group>"; };
+		6AA5521F29F959BF00562A6D /* BearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearView.swift; sourceTree = "<group>"; };
 		6ACF9D7329DD8D9400C17FDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6ACF9D7429DD919800C17FDB /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		6AD0BB3529E9A1EF00C6936C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -209,6 +212,7 @@
 				6A7CEA9429F144A40005EDFD /* ShopView.swift */,
 				6A8814BB29F596380032E2E1 /* SettingsView.swift */,
 				CD770E1629F94F0200949803 /* SpeechRecognition.swift */,
+				6AA5521F29F959BF00562A6D /* BearView.swift */,
 			);
 			path = BrainyBear;
 			sourceTree = "<group>";
@@ -398,6 +402,7 @@
 				6AD0BB3629E9A1EF00C6936C /* Model.xcdatamodeld in Sources */,
 				6A7CEA7529EB164D0005EDFD /* InfoView.swift in Sources */,
 				F464A1D329DA17FC00DA0F68 /* AugmentedRealityView.swift in Sources */,
+				6AA5522029F959BF00562A6D /* BearView.swift in Sources */,
 				6A3D4F5F29D99B2C004DBAA0 /* MathGameView.swift in Sources */,
 				CD770E1729F94F0200949803 /* SpeechRecognition.swift in Sources */,
 				6A75133729F3EE990003625C /* AddNewCanvasView.swift in Sources */,

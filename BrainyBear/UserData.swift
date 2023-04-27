@@ -9,10 +9,11 @@ import Foundation
 import SwiftUI
 import CoreData
 
-class DataController : ObservableObject {
+import CoreData
+
+class DataController {
     
-    // MARK: - Properties
-    
+    // shared property to access the object in multiple views
     static let shared = DataController()
     
     private lazy var persistentContainer: NSPersistentContainer = {
@@ -25,42 +26,81 @@ class DataController : ObservableObject {
         return container
     }()
     
-    private lazy var managedContext: NSManagedObjectContext = {
+    // main context to the application
+    private lazy var mainContext: NSManagedObjectContext = {
         let context = persistentContainer.viewContext
+        context.automaticallyMergesChangesFromParent = true
         return context
     }()
     
-    // MARK: - Methods
+    // background context of the application to save to. The core data actions are saved here to allow performing actions when navigating between views.
+    private lazy var backgroundContext: NSManagedObjectContext = {
+        let context = persistentContainer.newBackgroundContext()
+        context.automaticallyMergesChangesFromParent = true
+        return context
+    }()
     
+    // Saves the score to the Core Data store
     func saveScore(_ coins: Int) {
-        let entity = NSEntityDescription.entity(forEntityName: "Coin", in: managedContext)!
-        let scoreObject = NSManagedObject(entity: entity, insertInto: managedContext)
-        scoreObject.setValue(coins, forKey: "coins")
         
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print("Could not save coins. \(error), \(error.userInfo)")
+        // Perform the Core Data operation on the background context
+        backgroundContext.perform { [weak self] in
+            guard let self = self else { return }
+            
+            // Create a fetch request to check if a Coin entity already exists
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Coin")
+            fetchRequest.fetchLimit = 1
+            
+            if let result = try? self.backgroundContext.fetch(fetchRequest) as? [NSManagedObject], let existingScore = result.first {
+                // If a Score entity exists, update its score value
+                existingScore.setValue(coins, forKey: "coins")
+            } else {
+                // If a Score entity does not exist, create a new one and set its score value
+                let entity = NSEntityDescription.entity(forEntityName: "Coin", in: self.backgroundContext)!
+                let scoreObject = NSManagedObject(entity: entity, insertInto: self.backgroundContext)
+                scoreObject.setValue(coins, forKey: "coins")
+            }
+            
+            // Save the background context
+            do {
+                try self.backgroundContext.save()
+            } catch let error as NSError {
+                print("Could not save coins to background context. \(error), \(error.userInfo)")
+            }
+            
+            // Save changes to the main context
+            self.mainContext.performAndWait {
+                do {
+                    try self.mainContext.save()
+                } catch let error as NSError {
+                    print("Could not save coins to main context. \(error), \(error.userInfo)")
+                }
+            }
         }
     }
     
+    // Fetches the score from the Core Data store
     func fetchScore() -> Int? {
+        var coins: Int?
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Coin")
         fetchRequest.fetchLimit = 1
         
-        do {
-            let results = try managedContext.fetch(fetchRequest) as! [NSManagedObject]
-            if let score = results.first?.value(forKey: "coins") as? Int {
-                return score
-            } else {
-                return nil
+        // Perform the Core Data operation on the background context
+        backgroundContext.performAndWait {
+            do {
+                let results = try backgroundContext.fetch(fetchRequest) as! [NSManagedObject]
+                if let fetchedScore = results.first?.value(forKey: "coins") as? Int {
+                    coins = fetchedScore
+                }
+            } catch let error as NSError {
+                print("Could not fetch coins. \(error), \(error.userInfo)")
             }
-        } catch let error as NSError {
-            print("Could not fetch coins. \(error), \(error.userInfo)")
-            return nil
         }
+        
+        return coins
     }
 }
+
 
 
 

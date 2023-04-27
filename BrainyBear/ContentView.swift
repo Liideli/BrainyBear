@@ -16,11 +16,9 @@ struct ContentView: View {
     let draw:LocalizedStringKey = "draw"
     let story:LocalizedStringKey = "story"
     let math:LocalizedStringKey = "math"
-    
-    @Environment(\.managedObjectContext) private var managedObjectContext
-        
+            
     @State private var coins: Int?
-    
+            
     var body: some View {
         NavigationView {
             Color.bbLightBrown
@@ -69,7 +67,7 @@ struct ContentView: View {
                         .padding(.bottom, -20)
                         VStack{
                             Group {
-                                SceneView(scene: SCNScene(named: "Brian.usdc"), options: [.autoenablesDefaultLighting,.allowsCameraControl])
+                                SceneView()
                                     .padding()
                                     .shadow(radius: 15)
                                 HStack (spacing: 30){

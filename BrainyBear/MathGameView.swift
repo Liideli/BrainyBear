@@ -13,7 +13,22 @@ struct MathGameView: View {
     @ObservedObject var mathGame = MathGameViewModel()
         
     @State private var coins: Int?
-
+    
+    @State var answerTextSwitch: Bool = false
+    @State var firstAnswer: Bool = true
+    
+    func answerCorrect () {
+        coins = (coins ?? 0) + 1
+        DataController.shared.saveScore(coins!)
+        answerTextSwitch = true
+        firstAnswer = false
+    }
+    
+    func answerIncorrect () {
+        answerTextSwitch = false
+        firstAnswer = false
+    }
+    
     var body: some View {
         Color.bbLightBrown
             .ignoresSafeArea()
@@ -40,17 +55,21 @@ struct MathGameView: View {
                         fixedSize: 60))
                     .padding(30)
                     .background(Color.white, in: Capsule())
+                    .animation(.spring(), value: coins)
                     .padding()
+                Text((answerTextSwitch ? "Answer correct ✅" : "Wrong answer ❌"))
+                    .bold()
+                    .foregroundColor((answerTextSwitch ? Color.green : Color.red))
+                    .opacity((firstAnswer ? 0 : 1))
+                    .animation(.spring(), value: answerTextSwitch)
                 Spacer()
             }
             HStack {
                 Button(action: {
                     if (mathGame.makeGuess(guess: mathGame.shuffledAnswers[0])) {
-                        coins = (coins ?? 0) + 10
-                        DataController.shared.saveScore(coins!)
-                        print("Answer correct! \(DataController.shared.fetchScore() ?? 0)")
+                        answerCorrect()
                     } else {
-                        print("Answer incorrect!!")
+                        answerIncorrect()
                     }
                 }) {
                     Text("\(mathGame.shuffledAnswers[0])")
@@ -63,11 +82,9 @@ struct MathGameView: View {
                 }
                 Button(action: {
                     if (mathGame.makeGuess(guess: mathGame.shuffledAnswers[1])) {
-                        print("Answer correct! \(coins ?? 0)")
-                        coins = (coins ?? 0) + 10
-                        DataController.shared.saveScore(coins!)
+                        answerCorrect()
                     } else {
-                        print("Answer incorrect!!")
+                        answerIncorrect()
                     }}) {
                     Text("\(mathGame.shuffledAnswers[1])")
                         .frame(maxWidth: 175, maxHeight: 175)
@@ -81,11 +98,9 @@ struct MathGameView: View {
             HStack {
                 Button(action: {
                     if (mathGame.makeGuess(guess: mathGame.shuffledAnswers[2])) {
-                        print("Answer correct! \(coins ?? 0)")
-                        coins = (coins ?? 0) + 10
-                        DataController.shared.saveScore(coins!)
+                        answerCorrect()
                     } else {
-                        print("Answer incorrect!!")
+                        answerIncorrect()
                     }
                 }) {
                     Text("\(mathGame.shuffledAnswers[2])")
@@ -98,11 +113,9 @@ struct MathGameView: View {
                 }
                 Button(action: {
                     if (mathGame.makeGuess(guess: mathGame.shuffledAnswers[3])) {
-                        print("Answer correct! \(coins ?? 0)")
-                        coins = (coins ?? 0) + 10
-                        DataController.shared.saveScore(coins!)
+                        answerCorrect()
                     } else {
-                        print("Answer incorrect!!")
+                        answerIncorrect()
                     }
                 }) {
                     Text("\(mathGame.shuffledAnswers[3])")
