@@ -45,7 +45,7 @@
 "mapRequirements" = "Vaatii sijaintiluvat. Älä koskaan mene leikkikentälle ilman vanhempien lupaa tai valvontaa";
 "drawing" = "Piirtäminen";
 "drawInstructions" = "Piirrä ja tallenna kuvia sisäänrakennetuilla työkaluilla";
-"stroies" = "Tarinat";
+"stories" = "Tarinat";
 "storiesInstructions" = "Lue tai kuuntele useita tarinoita";
 "mathInstructions" = "Opi matematiikkaa satunnaisten kysymysten avulla ja ansaitse kolikoita";
 "ARView" = "Vaihtoehtoisen todellisuuden näkymä";

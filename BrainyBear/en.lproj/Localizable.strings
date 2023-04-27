@@ -45,7 +45,7 @@
 "mapRequirements" = "Requires location permissions. Never locate to playground without parental permission/supervision";
 "drawing" = "Drawing";
 "drawInstructions" = "Draw and save images with built in tools";
-"stroies" = "Stories";
+"stories" = "Stories";
 "storiesInstructions" = "Read or listen to multiple stories";
 "mathInstructions" = "Learn math with random generated questions and earn coins";
 "ARView" = "Augmented Reality View";
