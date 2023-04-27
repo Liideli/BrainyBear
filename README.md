@@ -1,5 +1,5 @@
 # BrainyBear
-BrainyBear offers children an creative and a playful environment, where learning is made fun.
+BrainyBear offers children a creative and a playful environment, where learning is made fun.
 
 ### Built with Swift and SwiftUI.
 - [Swift](https://developer.apple.com/swift/)
