@@ -21,7 +21,7 @@ struct BrainyBearApp: App {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .onAppear {
-                    // Start a timer that fires every 10 seconds
+                    // Start a timer that fires every 30 minutes
                     Timer.scheduledTimer(withTimeInterval: 1800, repeats: true) { _ in
                         // Update the state to show the alert
                         showAlert = true
