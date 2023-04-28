@@ -49,13 +49,13 @@
 "pen" = "Kynä";
 "marker" = "Tussi";
 "pickColor" = "Valitse Väri";
-"addCanvas" = "Lisää piirros";
+"addCanvas" = "Lisää taideteos";
 "drawing" = "Piirros";
 
 
 // AddNewCanvasView strings
-"titleCanvas" = "Piirroksen otsikko";
-"addNewCanvas" = "Lisää uusi piirros";
+"titleCanvas" = "Taideteoksen otsikko";
+"addNewCanvas" = "Lisää uusi taideteos";
 
 
 // ShopView strings

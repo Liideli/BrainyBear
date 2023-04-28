@@ -23,9 +23,9 @@ struct StoryUI: View {
     private let synthesizer = AVSpeechSynthesizer()
     var body: some View {
         ZStack {
-            Color.bbLightBrown
+            Image("story-background")
+                .resizable()
                 .ignoresSafeArea()
-            
             VStack {
                 Text(NSLocalizedString(titles[currentIndex], comment: ""))
                     .font(Font.custom("Marker Felt", size: 26))
@@ -35,20 +35,22 @@ struct StoryUI: View {
                 ScrollView {
                     Text(NSLocalizedString(stories[currentIndex], comment: ""))
                         .font(Font.custom("Marker Felt", size: 23))
-                        .padding()
-                        
-                }
+                        .padding(50)
+                        .lineSpacing(15)
+                        .kerning(1)
+                        .multilineTextAlignment(.center)
+                        .background(Color.white.opacity(0.4))
+                }.padding(.bottom)
                 
                 HStack {
                     Button(action: {
                         currentIndex = (currentIndex + 1) % stories.count
                     }, label: {
-                        
                         Text(next)
                             .frame(minWidth: 0, maxWidth: .infinity)
                             .padding(.vertical,40)
-                            .foregroundColor(.white)
-                            .background(Color.bbBabyBlue)
+                            .foregroundColor(Color.bbBlack)
+                            .background(Color.bbBeige)
                             .cornerRadius(10)
                     })
                     
@@ -61,17 +63,16 @@ struct StoryUI: View {
                         }
                         isSpeaking.toggle()
                     }
-                    
                     .padding(.vertical,40)
                     .frame(minWidth: 0, maxWidth: .infinity)
-                    .foregroundColor(.white)
-                    .background(Color.bbBabyBlue)
+                    .foregroundColor(Color.bbBlack)
+                    .background(Color.bbBeige)
                     .cornerRadius(10)
                 }
-                .padding()
+                .padding(.leading, 20)
+                .padding(.trailing, 20)
             }
         }
-        .navigationBarTitle(storiesNav)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .alignmentGuide(.top) { d in d[VerticalAlignment.top] }
     }

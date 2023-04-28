@@ -35,7 +35,7 @@ struct ContentView: View {
                                 } label: {
                                     Image(systemName: "info.circle")
                                         .padding()
-                                        .font(.system(size: 35))
+                                        .font(.system(size: 30))
                                         .foregroundColor(.bbBlack)
                                         .padding()
                                 }
@@ -48,7 +48,7 @@ struct ContentView: View {
                                         .foregroundColor(Color.bbBlack)
                                         .padding()
                                         .shadow(radius: 5)
-                                        .font(.custom("Verdana", fixedSize: 35))
+                                        .font(.custom("Verdana", fixedSize: 30))
                                     
                                 }
                                 Spacer()
@@ -58,7 +58,7 @@ struct ContentView: View {
                             label:  {
                                 Image(systemName: "gearshape.fill")
                                     .padding()
-                                    .font(.system(size: 35))
+                                    .font(.system(size: 30))
                                     .foregroundColor(.bbBlack)
                                     .padding()
                             }
@@ -79,7 +79,7 @@ struct ContentView: View {
                                     .padding(10)
                                     .foregroundColor(Color.bbBlack)
                                     .font(.system(size: 35))
-                                    .background(Color.bbBabyBlue, in: Capsule())
+                                    .background(Color.bbLightBrown.opacity(0.5), in: Capsule())
                                     .offset(y: -90)
                                     .padding(.bottom, -90)
                                     NavigationLink {
@@ -90,7 +90,7 @@ struct ContentView: View {
                                     .padding(10)
                                     .foregroundColor(Color.bbBlack)
                                     .font(.system(size: 35))
-                                    .background(Color.bbBabyBlue, in: Capsule())
+                                    .background(Color.bbLightBrown.opacity(0.5), in: Capsule())
                                     .offset(y: -90)
                                     .padding(.bottom, -90)
                                     NavigationLink {
@@ -101,7 +101,7 @@ struct ContentView: View {
                                     .padding(10)
                                     .foregroundColor(Color.bbBlack)
                                     .font(.system(size: 35))
-                                    .background(Color.bbBabyBlue, in: Capsule())
+                                    .background(Color.bbLightBrown.opacity(0.5), in: Capsule())
                                     .offset(y: -90)
                                     .padding(.bottom, -90)
                                 }

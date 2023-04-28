@@ -54,8 +54,8 @@
 
 
 // AddNewCanvasView strings
-"titleCanvas" = "Canvas Title";
-"addNewCanvas" = "Add New Canvas";
+"titleCanvas" = "Masterpiece Title";
+"addNewCanvas" = "Add New Masterpiece";
 
 
 // ShopView strings

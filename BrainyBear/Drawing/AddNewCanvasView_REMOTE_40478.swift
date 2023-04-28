@@ -9,11 +9,6 @@ import SwiftUI
 
 struct AddNewCanvasView: View {
     
-    // Localized string keys
-    let titleCanvas:LocalizedStringKey = "titleCanvas"
-    let addNewCanvas:LocalizedStringKey = "addNewCanvas"
-    let save:LocalizedStringKey = "save"
-    
     @Environment (\.managedObjectContext) var viewContext
     @Environment (\.presentationMode) var presentationMode
     
@@ -27,10 +22,10 @@ struct AddNewCanvasView: View {
                     .ignoresSafeArea()
                 Form{
                     Section{
-                        TextField(titleCanvas, text: $canvasTitle)
+                        TextField("Name your masterpiece", text: $canvasTitle)
                     }
                 }
-                .navigationTitle(Text(addNewCanvas))
+                .navigationTitle(Text("New Masterpiece"))
                 .navigationBarItems(leading: Button(action: {
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
@@ -49,7 +44,7 @@ struct AddNewCanvasView: View {
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 }, label: {
-                    Text(save)
+                    Text("Save")
                 }))
             }
             }.scrollContentBackground(.hidden)

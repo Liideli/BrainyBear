@@ -22,14 +22,17 @@ struct CanvasView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                List {
-                    ForEach(drawings) {drawing in
-                        NavigationLink(destination: DrawingView(id: drawing.id, data: drawing.canvasData, title: drawing.title), label:{
-                            Text(drawing.title ?? "Untitled")
-                        })
-                    }
-                    .onDelete(perform: deleteItem)
+            ZStack{
+                Image("draw-background")
+                    .resizable()
+                    .ignoresSafeArea()
+                    List {
+                        ForEach(drawings) {drawing in
+                            NavigationLink(destination: DrawingView(id: drawing.id, data: drawing.canvasData, title: drawing.title), label:{
+                                Text(drawing.title ?? "Untitled")
+                            })
+                        }
+                        .onDelete(perform: deleteItem)
                     
                     Button(action: {
                         self.showSheet.toggle()
@@ -44,12 +47,9 @@ struct CanvasView: View {
                         AddNewCanvasView().environment(\.managedObjectContext, viewContext)
                     })
                 }
-                .navigationTitle(Text(drawing))
-                .toolbar {
-                    EditButton()
-                }
             }
         }
+        .scrollContentBackground(.hidden)
     }
     
     func deleteItem(at offset: IndexSet) {

@@ -21,16 +21,45 @@ struct AddNewCanvasView: View {
     
     var body: some View {
         NavigationStack{
+<<<<<<< HEAD
+            Form{
+                Section{
+                    TextField(titleCanvas, text: $canvasTitle)
+                }
+            }
+            .navigationTitle(Text(addNewCanvas))
+            .navigationBarItems(leading: Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Image(systemName: "xmark")
+            }), trailing: Button(action: {
+                if !canvasTitle.isEmpty {
+                    let drawing = Drawing(context: viewContext)
+                    drawing.title = canvasTitle
+                    drawing.id = UUID()
+                    
+                    do {
+                        try viewContext.save()
+                    }
+                    catch {
+                        print(error)
+=======
             ZStack{
                 Image("addDraw-background")
                     .resizable()
                     .ignoresSafeArea()
                 Form{
                     Section{
-                        TextField(titleCanvas, text: $canvasTitle)
+                        TextField("Name your masterpiece", text: $canvasTitle)
+>>>>>>> betterUI
                     }
                 }
-                .navigationTitle(Text(addNewCanvas))
+<<<<<<< HEAD
+            }, label: {
+                Text(save)
+            }))
+=======
+                .navigationTitle(Text("New Masterpiece"))
                 .navigationBarItems(leading: Button(action: {
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
@@ -49,10 +78,11 @@ struct AddNewCanvasView: View {
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 }, label: {
-                    Text(save)
+                    Text("Save")
                 }))
             }
             }.scrollContentBackground(.hidden)
+>>>>>>> betterUI
         }
 }
 
