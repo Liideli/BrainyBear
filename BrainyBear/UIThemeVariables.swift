@@ -15,5 +15,5 @@ extension Color {
     static let bbLightBrown = Color("BBLightBrown")
     static let bbLilac = Color("BBLilac")
     static let bbBlack = Color("BBBlack")
-    
+    static let bbBeige = Color("BBGray")
 }

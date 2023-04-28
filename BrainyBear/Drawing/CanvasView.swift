@@ -18,34 +18,32 @@ struct CanvasView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                List {
-                    ForEach(drawings) {drawing in
-                        NavigationLink(destination: DrawingView(id: drawing.id, data: drawing.canvasData, title: drawing.title), label:{
-                            Text(drawing.title ?? "Untitled")
+            ZStack{
+                Image("draw-background")
+                    .resizable()
+                    .ignoresSafeArea()
+                    List {
+                        ForEach(drawings) {drawing in
+                            NavigationLink(destination: DrawingView(id: drawing.id, data: drawing.canvasData, title: drawing.title), label:{
+                                Text(drawing.title ?? "Untitled")
+                            })
+                        }
+                        .onDelete(perform: deleteItem)
+                        Button(action: {
+                            self.showSheet.toggle()
+                        }, label: {
+                            HStack{
+                                Image(systemName: "plus")
+                                Text("Add Canvas")
+                            }
+                        })
+                        .sheet(isPresented: $showSheet, content: {
+                            AddNewCanvasView().environment(\.managedObjectContext, viewContext)
                         })
                     }
-                    .onDelete(perform: deleteItem)
-                    
-                    Button(action: {
-                        self.showSheet.toggle()
-                    }, label: {
-                        HStack{
-                            Image(systemName: "plus")
-                            Text("Add Canvas")
-                        }
-                    })
-                    .foregroundColor(.orange)
-                    .sheet(isPresented: $showSheet, content: {
-                        AddNewCanvasView().environment(\.managedObjectContext, viewContext)
-                    })
-                }
-                .navigationTitle(Text("Drawing"))
-                .toolbar {
-                    EditButton()
-                }
             }
         }
+        .scrollContentBackground(.hidden)
     }
     
     func deleteItem(at offset: IndexSet) {
