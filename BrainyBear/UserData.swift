@@ -96,8 +96,58 @@ class DataController {
                 print("Could not fetch coins. \(error), \(error.userInfo)")
             }
         }
-        
         return coins
+    }
+    
+    func saveStoreItem(_ name: String, price: Int, id: UUID) {
+        
+        // Perform the Core Data operation on the background context
+        backgroundContext.perform { [weak self] in
+            guard let self = self else { return }
+
+                // If a Score entity does not exist, create a new one and set its score value
+                let entity = NSEntityDescription.entity(forEntityName: "StoreItem", in: self.backgroundContext)!
+                let storeObject = NSManagedObject(entity: entity, insertInto: self.backgroundContext)
+                storeObject.setValue(name, forKey: "name")
+                storeObject.setValue(price, forKey: "price")
+                storeObject.setValue(id, forKey: "id")
+            
+            // Save the background context
+            do {
+                try self.backgroundContext.save()
+            } catch let error as NSError {
+                print("Could not save coins to background context. \(error), \(error.userInfo)")
+            }
+            
+            // Save changes to the main context
+            self.mainContext.performAndWait {
+                do {
+                    try self.mainContext.save()
+                } catch let error as NSError {
+                    print("Could not save coins to main context. \(error), \(error.userInfo)")
+                }
+            }
+        }
+    }
+    
+    // Fetches the items from the Core Data store
+    func fetchStoreItems() -> Array<Any>? {
+        var items: Array<Any>?
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "StoreItem")
+        
+        // Perform the Core Data operation on the background context
+        backgroundContext.performAndWait {
+            do {
+                let results = try backgroundContext.fetch(fetchRequest) as! [NSManagedObject]
+                if let fetchedItems = results as Array<Any>? {
+                    items = fetchedItems
+                }
+                items = results
+            } catch let error as NSError {
+                print("Could not fetch items. \(error), \(error.userInfo)")
+            }
+        }
+        return items
     }
 }
 

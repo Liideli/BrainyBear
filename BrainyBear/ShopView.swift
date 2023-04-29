@@ -15,7 +15,6 @@ struct ShopItem: Identifiable {
 }
 
 struct ShopView: View {
-   //@State private var items = [ShopItem]()
     @State private var showingAddItemView = false
     @State private var coins: Int?
     @State private var showingConfirmation = false
@@ -23,8 +22,18 @@ struct ShopView: View {
     @State private var isShowingAlert = false
     @State private var isPresentingPasscode = false
     @Environment(\.managedObjectContext) var managedObjectContext
-    @FetchRequest(sortDescriptors: []) var items: FetchedResults<StoreItem>
+    //@FetchRequest(sortDescriptors: []) var items: FetchedResults<StoreItem>
+    private var fetchedItems = DataController.shared.fetchStoreItems()
+    
+    /*
+    @State var items = [ShopItem]() {
+        fetchedItems?.map { item in
+            ShopItem(name: item.name ?? "", price: item.price )
+        }
+    }*/
 
+    @State var items = [ShopItem]()
+    
     var body: some View {
         NavigationView {
             Color.bbLightBrown
@@ -129,11 +138,6 @@ struct ShopView: View {
     }
     
     func addItem(item: ShopItem) {
-        let newItem = StoreItem(context: managedObjectContext)
-        newItem.id = item.id
-        newItem.name = item.name
-        newItem.price = Int32(item.price)
-        try? managedObjectContext.save()
         //items.append(item)
     }
     
@@ -141,7 +145,7 @@ struct ShopView: View {
         //items.remove(atOffsets: offsets)
     }
     
-    func deleteItem(_ item: StoreItem) {
+    func deleteItem(_ item: ShopItem) {
         if (coins ?? 0 >= item.price) {
             if let index = items.firstIndex(where: { $0.id == item.id }) {
                 coins = (coins ?? 0) - Int(item.price)
@@ -153,7 +157,7 @@ struct ShopView: View {
 }
 
 struct ItemRow: View {
-    let item: StoreItem
+    let item: ShopItem
     let onDelete: () -> Void
     
     var body: some View {

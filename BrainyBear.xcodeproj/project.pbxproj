@@ -25,7 +25,6 @@
 		6AA5521C29F7E67C00562A6D /* Brian.usdc in Resources */ = {isa = PBXBuildFile; fileRef = 6AA5521B29F7E67C00562A6D /* Brian.usdc */; };
 		6AA5522029F959BF00562A6D /* BearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5521F29F959BF00562A6D /* BearView.swift */; };
 		6AA5522729FA925C00562A6D /* ShopDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5522629FA925C00562A6D /* ShopDataController.swift */; };
-		6AA5522A29FAA28A00562A6D /* ShopData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5522829FAA28A00562A6D /* ShopData.xcdatamodeld */; };
 		6ACF9D7529DD919800C17FDB /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ACF9D7429DD919800C17FDB /* locations.json */; };
 		6AD0BB3629E9A1EF00C6936C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6AD0BB3429E9A1EF00C6936C /* Model.xcdatamodeld */; };
 		6AD0BB3829E9A4D400C6936C /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD0BB3729E9A4D400C6936C /* CanvasView.swift */; };
@@ -84,7 +83,6 @@
 		6AA5521B29F7E67C00562A6D /* Brian.usdc */ = {isa = PBXFileReference; lastKnownFileType = file; name = Brian.usdc; path = BrainyBear/Brian.usdc; sourceTree = "<group>"; };
 		6AA5521F29F959BF00562A6D /* BearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearView.swift; sourceTree = "<group>"; };
 		6AA5522629FA925C00562A6D /* ShopDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDataController.swift; sourceTree = "<group>"; };
-		6AA5522929FAA28A00562A6D /* ShopData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShopData.xcdatamodel; sourceTree = "<group>"; };
 		6ACF9D7329DD8D9400C17FDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6ACF9D7429DD919800C17FDB /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		6AD0BB3529E9A1EF00C6936C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -139,15 +137,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6AA5522229FA916300562A6D /* Shop */ = {
-			isa = PBXGroup;
-			children = (
-				6A7CEA9429F144A40005EDFD /* ShopView.swift */,
-				6AA5522629FA925C00562A6D /* ShopDataController.swift */,
-			);
-			path = Shop;
-			sourceTree = "<group>";
-		};
 		6AA5522329FA917B00562A6D /* MathGame */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,9 +200,10 @@
 		F41D653D29D4398800FE6CA6 /* BrainyBear */ = {
 			isa = PBXGroup;
 			children = (
+				6A7CEA9429F144A40005EDFD /* ShopView.swift */,
+				6AA5522629FA925C00562A6D /* ShopDataController.swift */,
 				6AA5522529FA921300562A6D /* Home */,
 				6AA5522329FA917B00562A6D /* MathGame */,
-				6AA5522229FA916300562A6D /* Shop */,
 				F43673EA29EC06D8005E0E76 /* SettingsView.swift */,
 				F436749429ED5D08005E0E76 /* Experience.rcproject */,
 				6AD0BB2F29E99E4E00C6936C /* Drawing */,
@@ -238,7 +228,6 @@
 				6A75133829F3F0550003625C /* Persistence.swift */,
 				6A8814BB29F596380032E2E1 /* SettingsView.swift */,
 				CD770E1629F94F0200949803 /* SpeechRecognition.swift */,
-				6AA5522829FAA28A00562A6D /* ShopData.xcdatamodeld */,
 			);
 			path = BrainyBear;
 			sourceTree = "<group>";
@@ -438,7 +427,6 @@
 				CD445CE129E1D0830069A787 /* Story.swift in Sources */,
 				6A7CEA9529F144A40005EDFD /* ShopView.swift in Sources */,
 				6A02604229E716E10088E99E /* UIThemeVariables.swift in Sources */,
-				6AA5522A29FAA28A00562A6D /* ShopData.xcdatamodeld in Sources */,
 				F43673EB29EC06D8005E0E76 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -809,16 +797,6 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		6AA5522829FAA28A00562A6D /* ShopData.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				6AA5522929FAA28A00562A6D /* ShopData.xcdatamodel */,
-			);
-			currentVersion = 6AA5522929FAA28A00562A6D /* ShopData.xcdatamodel */;
-			path = ShopData.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		6AD0BB3429E9A1EF00C6936C /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
