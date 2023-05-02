@@ -65,7 +65,7 @@
 "doYouWant" = "Haluatko ostaa esineen ";
 "for" = " ";
 "coinsAmount" = "kolikolla?";
-"notEnough" = "Ei tarpeeksi rahaa ostaa esineitä";
+"notEnough" = "Ei tarpeeksi rahaa ostaa esinettä ";
 "noRewardsToBuyYet" = "Ei vielä ostettavia esinettä";
 "parentalPassword" = "Vanhempien salasana";
 "fourDigits" = "4 numeroa";
