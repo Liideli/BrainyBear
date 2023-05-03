@@ -18,6 +18,10 @@ BrainyBear offers children a creative and a playful environment, where learning 
 - Text to Speech
 - Language Localization (en & fi)
 
+## Resources
+[Service map](https://servicemap.hel.fi/en)
+[PasscodeField](https://github.com/hengyu/PasscodeField)
+
 ## Contributors
 - [Roope Laine](https://github.com/Liideli)
 - [Suvi Laitinen](https://github.com/Sofvi/)
