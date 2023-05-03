@@ -8,10 +8,13 @@ BrainyBear offers children a creative and a playful environment, where learning 
 ## Features
 - AR
 - Home View
-- Map View
+- Playground View (Map View)
 - Math View
 - Story View
 - Draw View
+- Settings View
+- Info View
+- Shop View
 - Text to Speech
 - Language Localization (en & fi)
 
